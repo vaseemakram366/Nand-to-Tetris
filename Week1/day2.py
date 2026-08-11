@@ -43,6 +43,7 @@ print("Decimal:", binary_to_decimal(binary))
 def decimal_to_octal(num):
     if num == 0:
         return "0"
+        
 
     octal = ""
 
