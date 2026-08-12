@@ -100,7 +100,7 @@ print("Decimal:", number)
 print("Hexadecimal:", decimal_to_hex(number))
 
 
-BINARY TO OCTAL
+# BINARY TO OCTAL
 
 def binary_to_octal(binary):
     decimal = 0
@@ -128,7 +128,7 @@ binary = "1010"
 print("Binary:", binary)
 print("Octal:", binary_to_octal(binary))
 
-OCTAL TO BINARY
+# OCTAL TO BINARY
 
 def octal_to_binary(octal):
     # Step 1: Octal to Decimal
@@ -157,7 +157,7 @@ print("Octal:", octal)
 print("Binary:", octal_to_binary(octal))
 
 
-BINARY TO HEXADECIMAL
+# BINARY TO HEXADECIMAL
 
 def binary_to_hex(binary):
     # Step 1: Binary to Decimal
@@ -188,7 +188,7 @@ print("Binary:", binary)
 print("Hexadecimal:", binary_to_hex(binary))
 
 
-OCTAL TO HEXADECIMAL
+# OCTAL TO HEXADECIMAL
 
 def octal_to_hex(octal):
     # Step 1: Octal to Decimal
@@ -219,7 +219,7 @@ print("Octal:", octal)
 print("Hexadecimal:", octal_to_hex(octal))
 
 
-HEXADECIMAL TO OCTAL
+# HEXADECIMAL TO OCTAL
 
 def hex_to_octal(hexa):
     hex_digits = "0123456789ABCDEF"
