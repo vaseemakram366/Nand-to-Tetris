@@ -1,0 +1,13 @@
+// XOR HDL Implementation
+
+CHIP Mux {
+    IN a, b, sel;
+    OUT out;
+
+    PARTS:
+    Not(in=sel, out=nsel);
+    And(a=nsel, b=a, out=x);
+    And(a=sel, b=b, out=y);
+    Or(a=x,b=y, out=out);
+   
+}
