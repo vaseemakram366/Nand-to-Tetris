@@ -1,13 +1,14 @@
 // XOR HDL Implementation
 
-CHIP Mux {
-    IN a, b, sel;
+CHIP Xor {
+    IN a, b;
     OUT out;
 
     PARTS:
-    Not(in=sel, out=nsel);
-    And(a=nsel, b=a, out=x);
-    And(a=sel, b=b, out=y);
-    Or(a=x,b=y, out=out);
-   
+    Nand(a=a, b=a, out=x);
+    Nand(a=b, b=b, out=y);
+    Nand(a=a, b=y, out=z);
+    Nand(a=b, b=x, out=z1);
+    Nand(a=z, b=z1, out=out);
+    //// Replace this comment with your code.
 }
