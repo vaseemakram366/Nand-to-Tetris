@@ -1,0 +1,19 @@
+// 2-Bit MUX
+
+```hdl
+CHIP Mux2 {
+    IN a[2], b[2], sel;
+    OUT out[2];
+
+    PARTS:
+    Not(in=sel, out=nsel);
+
+    And(a=a[0], b=nsel, out=x0);
+    And(a=b[0], b=sel,  out=y0);
+    Or(a=x0, b=y0, out=out[0]);
+
+    And(a=a[1], b=nsel, out=x1);
+    And(a=b[1], b=sel,  out=y1);
+    Or(a=x1, b=y1, out=out[1]);
+}
+```
