@@ -1,0 +1,14 @@
+Topic: Binary Addition
+
+CHIP HalfAdder {
+    IN a, b;
+    OUT sum, carry;
+
+    PARTS:
+
+    // Sum = a XOR b
+    Xor(a=a, b=b, out=sum);
+
+    // Carry = a AND b
+    And(a=a, b=b, out=carry);
+}
