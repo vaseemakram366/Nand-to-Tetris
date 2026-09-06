@@ -1,0 +1,36 @@
+PC.hdl
+
+CHIP PC {
+    IN in[16], load, inc, reset;
+    OUT out[16];
+
+    PARTS:
+    Inc16(in=out, out=incOut);
+
+    Mux16(
+        a=out,
+        b=incOut,
+        sel=inc,
+        out=incValue
+    );
+
+    Mux16(
+        a=incValue,
+        b=in,
+        sel=load,
+        out=loadValue
+    );
+
+    Mux16(
+        a=loadValue,
+        b=false,
+        sel=reset,
+        out=nextValue
+    );
+
+    Register(
+        in=nextValue,
+        load=true,
+        out=out
+    );
+}
