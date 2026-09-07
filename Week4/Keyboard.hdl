@@ -1,0 +1,12 @@
+Keyboard.hdl
+
+CHIP Keyboard {
+    OUT out[16];
+
+    PARTS:
+    Register(
+        in=false,
+        load=false,
+        out=out
+    );
+}
