@@ -1,0 +1,99 @@
+CPU.hdl
+
+CHIP CPU {
+    IN
+        inM[16],
+        instruction[16],
+        reset;
+
+    OUT
+        outM[16],
+        writeM,
+        addressM[15],
+        pc[15];
+
+    PARTS:
+    // A-register
+    Not(in=instruction[15], out=isAInstruction);
+
+    And(a=instruction[15], b=instruction[5], out=loadAFromALU);
+    Or(a=isAInstruction, b=loadAFromALU, out=loadA);
+
+    ARegister(
+        in=aluOut,
+        load=loadA,
+        out=aOut
+    );
+
+    // D-register
+    And(
+        a=instruction[15],
+        b=instruction[4],
+        out=loadD
+    );
+
+    DRegister(
+        in=aluOut,
+        load=loadD,
+        out=dOut
+    );
+
+    // ALU
+    Mux16(
+        a=aOut,
+        b=inM,
+        sel=instruction[12],
+        out=aluY
+    );
+
+    ALU(
+        x=dOut,
+        y=aluY,
+        zx=instruction[11],
+        nx=instruction[10],
+        zy=instruction[9],
+        ny=instruction[8],
+        f=instruction[7],
+        no=instruction[6],
+        out=aluOut,
+        zr=zr,
+        ng=ng
+    );
+
+    // Memory output
+    And(
+        a=instruction[15],
+        b=instruction[3],
+        out=writeM
+    );
+
+    Or16(a=aluOut, b=false, out=outM);
+
+    // Address M
+    Or16(a=aOut, b=false, out[0..14]=addressM);
+
+    // PC logic
+    And(a=instruction[15], b=instruction[2], out=jgt);
+    And(a=instruction[15], b=instruction[1], out=jeq);
+    And(a=instruction[15], b=instruction[0], out=jlt);
+
+    Not(in=zr, out=notZR);
+    Not(in=ng, out=notNG);
+
+    And(a=notZR, b=notNG, out=positive);
+
+    And(a=jgt, b=positive, out=takeJGT);
+    And(a=jeq, b=zr, out=takeJEQ);
+    And(a=jlt, b=ng, out=takeJLT);
+
+    Or(a=takeJGT, b=takeJEQ, out=jump1);
+    Or(a=jump1, b=takeJLT, out=jump);
+
+    PC(
+        in=aOut,
+        load=jump,
+        inc=true,
+        reset=reset,
+        out[0..14]=pc
+    );
+}
