@@ -1,0 +1,21 @@
+Memory.hdl
+
+CHIP Memory {
+    IN in[16], load, address[15];
+    OUT out[16];
+
+    PARTS:
+    DMux(in=load, sel=address[14], a=ram, b=screenLoad);
+
+    DMux(in=ram, sel=address[13], a=lowRam, b=highRam);
+
+    RAM4K(in=in, load=lowRam, address=address[0..11], out=lowOut);
+
+    RAM4K(in=in, load=highRam, address=address[0..11], out=highOut);
+
+    Screen(in=in, load=screenLoad, address=address[0..12], out=screenOut);
+
+    Mux16(a=lowOut, b=highOut, sel=address[12], out=ramOut);
+
+    Mux16(a=ramOut, b=screenOut, sel=address[13], out=out);
+}
