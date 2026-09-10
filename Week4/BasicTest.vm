@@ -1,0 +1,11 @@
+push constant 7
+push constant 8
+add
+push constant 10
+sub
+neg
+push constant 5
+and
+push constant 3
+or
+not
