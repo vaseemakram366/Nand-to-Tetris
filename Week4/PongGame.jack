@@ -1,0 +1,24 @@
+class PongGame {
+    field Ball ball;
+    field Bat bat;
+
+    constructor PongGame new() {
+        let ball = Ball.new(250, 120, 5);
+        let bat = Bat.new(230, 240);
+        return this;
+    }
+
+    method void run() {
+        while (true) {
+            do ball.move();
+            do ball.draw();
+            do bat.draw();
+        }
+        return;
+    }
+
+    method void dispose() {
+        do Memory.deAlloc(this);
+        return;
+    }
+}
