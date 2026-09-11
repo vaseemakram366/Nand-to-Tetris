@@ -1,0 +1,19 @@
+class SquareGame {
+    field Square square;
+
+    constructor SquareGame new() {
+        let square = Square.new(100, 100, 20);
+        return this;
+    }
+
+    method void moveSquare() {
+        do square.draw();
+        return;
+    }
+
+    method void dispose() {
+        do square.dispose();
+        do Memory.deAlloc(this);
+        return;
+    }
+}
