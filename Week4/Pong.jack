@@ -1,0 +1,12 @@
+class Pong {
+    function void main() {
+        var PongGame game;
+
+        let game = PongGame.new();
+
+        do game.run();
+        do game.dispose();
+
+        return;
+    }
+}
