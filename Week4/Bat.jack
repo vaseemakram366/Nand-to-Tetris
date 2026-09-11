@@ -1,0 +1,32 @@
+class Bat {
+    field int x, y, width, height;
+
+    constructor Bat new(int x1, int y1) {
+        let x = x1;
+        let y = y1;
+        let width = 40;
+        let height = 5;
+        return this;
+    }
+
+    method void draw() {
+        do Screen.setColor(true);
+        do Screen.drawRectangle(
+            x,
+            y,
+            x + width,
+            y + height
+        );
+        return;
+    }
+
+    method void moveLeft() {
+        let x = x - 5;
+        return;
+    }
+
+    method void moveRight() {
+        let x = x + 5;
+        return;
+    }
+}
