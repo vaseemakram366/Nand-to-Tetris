@@ -1,0 +1,54 @@
+class Math {
+
+    function int multiply(int x, int y) {
+        var int sum, count;
+
+        let sum = 0;
+        let count = 0;
+
+        while (count < y) {
+            let sum = sum + x;
+            let count = count + 1;
+        }
+
+        return sum;
+    }
+
+    function int divide(int x, int y) {
+        var int quotient, remainder;
+
+        let quotient = 0;
+        let remainder = x;
+
+        while (remainder >= y) {
+            let remainder = remainder - y;
+            let quotient = quotient + 1;
+        }
+
+        return quotient;
+    }
+
+    function int min(int x, int y) {
+        if (x < y) {
+            return x;
+        }
+
+        return y;
+    }
+
+    function int max(int x, int y) {
+        if (x > y) {
+            return x;
+        }
+
+        return y;
+    }
+
+    function int abs(int x) {
+        if (x < 0) {
+            return -x;
+        }
+
+        return x;
+    }
+}
