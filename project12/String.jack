@@ -1,0 +1,87 @@
+class String {
+    field Array chars;
+    field int length;
+
+    constructor String new(int maxLength) {
+        let chars = Array.new(maxLength);
+        let length = 0;
+        return this;
+    }
+
+    method void dispose() {
+        do Memory.deAlloc(chars);
+        do Memory.deAlloc(this);
+        return;
+    }
+
+    method int length() {
+        return length;
+    }
+
+    method char charAt(int index) {
+        return chars[index];
+    }
+
+    method void setCharAt(int index, char c) {
+        let chars[index] = c;
+        return;
+    }
+
+    method String appendChar(char c) {
+        let chars[length] = c;
+        let length = length + 1;
+        return this;
+    }
+
+    method void eraseLastChar() {
+        if (length > 0) {
+            let length = length - 1;
+        }
+        return;
+    }
+
+    method int intValue() {
+        var int i, result;
+
+        let i = 0;
+        let result = 0;
+
+        while (i < length) {
+            let result = result * 10;
+            let result = result + (chars[i] - 48);
+            let i = i + 1;
+        }
+
+        return result;
+    }
+
+    method void setInt(int number) {
+        var int divisor, digit;
+
+        let length = 0;
+        let divisor = 1;
+
+        while (divisor <= number) {
+            let divisor = divisor * 10;
+        }
+
+        let divisor = divisor / 10;
+
+        while (divisor > 0) {
+            let digit = number / divisor;
+            let number = number - digit * divisor;
+            do appendChar(digit + 48);
+            let divisor = divisor / 10;
+        }
+
+        return;
+    }
+
+    function String newLine() {
+        return String.new(1);
+    }
+
+    function String backSpace() {
+        return String.new(1);
+    }
+}
