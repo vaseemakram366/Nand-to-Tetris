@@ -1,0 +1,20 @@
+class Array {
+
+    function Array new(int size) {
+        return Memory.alloc(size);
+    }
+
+    method void dispose() {
+        do Memory.deAlloc(this);
+        return;
+    }
+
+    method int get(int index) {
+        return this[index];
+    }
+
+    method void set(int index, int value) {
+        let this[index] = value;
+        return;
+    }
+}
