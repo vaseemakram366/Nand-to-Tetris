@@ -1,0 +1,34 @@
+class Keyboard {
+
+    static int keyPressed;
+
+    function void init() {
+        let keyPressed = 0;
+        return;
+    }
+
+    function char key() {
+        return Memory.peek(24576);
+    }
+
+    function void readKey() {
+        let keyPressed = Memory.peek(24576);
+        return;
+    }
+
+    function char waitKey() {
+        var int k;
+
+        let k = 0;
+
+        while (k = 0) {
+            let k = Memory.peek(24576);
+        }
+
+        while (~(Memory.peek(24576) = 0)) {
+            let k = Memory.peek(24576);
+        }
+
+        return k;
+    }
+}
