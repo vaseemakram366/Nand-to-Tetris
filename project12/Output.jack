@@ -1,0 +1,51 @@
+class Output {
+
+    function void init() {
+        return;
+    }
+
+    function void moveCursor(int i, int j) {
+        var int address;
+
+        let address = 16384 + (j * 32) + (i / 16);
+        do Memory.peek(address);
+
+        return;
+    }
+
+    function void printChar(char c) {
+        return;
+    }
+
+    function void printString(String s) {
+        var int i;
+
+        let i = 0;
+
+        while (i < s.length()) {
+            do Output.printChar(s.charAt(i));
+            let i = i + 1;
+        }
+
+        return;
+    }
+
+    function void printInt(int value) {
+        var String s;
+
+        let s = String.new(6);
+        do s.setInt(value);
+        do Output.printString(s);
+        do s.dispose();
+
+        return;
+    }
+
+    function void println() {
+        return;
+    }
+
+    function void backSpace() {
+        return;
+    }
+}
