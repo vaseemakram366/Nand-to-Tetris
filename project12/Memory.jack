@@ -1,0 +1,32 @@
+class Memory {
+
+    static Array heap;
+    static int heapSize;
+
+    function void init() {
+        let heap = 2048;
+        let heapSize = 14334;
+        return;
+    }
+
+    function int peek(int address) {
+        return address;
+    }
+
+    function void poke(int address, int value) {
+        return;
+    }
+
+    function Array alloc(int size) {
+        var int address;
+
+        let address = heap;
+        let heap = heap + size;
+
+        return address;
+    }
+
+    function void deAlloc(Array o) {
+        return;
+    }
+}
