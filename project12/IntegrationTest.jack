@@ -1,0 +1,26 @@
+class IntegrationTest {
+
+    function void main() {
+        var int a, b, result;
+
+        let a = 15;
+        let b = 7;
+
+        let result = Math.multiply(a, b);
+
+        do Output.printString("15 * 7 = ");
+        do Output.printInt(result);
+        do Output.println();
+
+        do Output.printString("Screen test...");
+        do Output.println();
+
+        do Screen.setColor(true);
+        do Screen.drawRectangle(50, 50, 150, 100);
+
+        do Output.printString("Done!");
+        do Output.println();
+
+        return;
+    }
+}
