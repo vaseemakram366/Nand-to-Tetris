@@ -1,0 +1,27 @@
+class Main {
+
+    function void main() {
+        var int result;
+        var String message;
+
+        let result = Math.multiply(12, 8);
+
+        let message = String.new(32);
+        do message.appendChar(82);
+        do message.appendChar(101);
+        do message.appendChar(115);
+        do message.appendChar(117);
+        do message.appendChar(108);
+        do message.appendChar(116);
+        do message.appendChar(58);
+        do message.appendChar(32);
+
+        do Output.printString(message);
+        do Output.printInt(result);
+        do Output.println();
+
+        do message.dispose();
+
+        return;
+    }
+}
