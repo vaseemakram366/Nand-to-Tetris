@@ -1,0 +1,25 @@
+class TestMain {
+
+    function void main() {
+        var int x, y, result;
+
+        let x = 12;
+        let y = 5;
+
+        let result = Math.multiply(x, y);
+
+        do Output.printString("Result: ");
+        do Output.printInt(result);
+        do Output.println();
+
+        if (result > 50) {
+            do Output.printString("Greater than 50");
+        } else {
+            do Output.printString("50 or less");
+        }
+
+        do Output.println();
+
+        return;
+    }
+}
