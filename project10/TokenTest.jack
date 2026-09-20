@@ -1,0 +1,16 @@
+class TokenTest {
+    function void main() {
+        var int x;
+        var String s;
+
+        let x = 42;
+        let s = "Hello Jack";
+
+        if (x > 10) {
+            do Output.printString(s);
+            do Output.println();
+        }
+
+        return;
+    }
+}
