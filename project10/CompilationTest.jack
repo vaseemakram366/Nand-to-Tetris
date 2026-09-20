@@ -1,0 +1,32 @@
+class CompilationTest {
+    field int value;
+
+    constructor CompilationTest new(int x) {
+        let value = x;
+        return this;
+    }
+
+    method void setValue(int x) {
+        let value = x;
+        return;
+    }
+
+    method int getValue() {
+        return value;
+    }
+
+    function void main() {
+        var CompilationTest obj;
+        var int result;
+
+        let obj = CompilationTest.new(10);
+        do obj.setValue(25);
+
+        let result = obj.getValue();
+
+        do Output.printInt(result);
+        do Output.println();
+
+        return;
+    }
+}
