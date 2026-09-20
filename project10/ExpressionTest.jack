@@ -1,0 +1,23 @@
+class ExpressionTest {
+    function void main() {
+        var int a;
+        var int b;
+        var int result;
+
+        let a = 10;
+        let b = 5;
+
+        let result = (a + b) * 2;
+        let result = result - (a / b);
+
+        if (result > 20) {
+            do Output.printString("Result is greater than 20");
+        } else {
+            do Output.printString("Result is 20 or less");
+        }
+
+        do Output.println();
+
+        return;
+    }
+}
