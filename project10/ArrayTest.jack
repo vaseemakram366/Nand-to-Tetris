@@ -1,0 +1,24 @@
+class ArrayTest {
+    function void main() {
+        var Array arr;
+        var int i;
+        var int sum;
+
+        let arr = Array.new(5);
+        let i = 0;
+        let sum = 0;
+
+        while (i < 5) {
+            let arr[i] = i * 2;
+            let sum = sum + arr[i];
+            let i = i + 1;
+        }
+
+        do Output.printInt(sum);
+        do Output.println();
+
+        do arr.dispose();
+
+        return;
+    }
+}
