@@ -1,0 +1,24 @@
+class ControlFlowTest {
+    function void main() {
+        var int i;
+        var int total;
+
+        let i = 1;
+        let total = 0;
+
+        while (i <= 10) {
+            if ((i & 1) = 0) {
+                let total = total + i;
+            } else {
+                let total = total + (i * 2);
+            }
+
+            let i = i + 1;
+        }
+
+        do Output.printInt(total);
+        do Output.println();
+
+        return;
+    }
+}
