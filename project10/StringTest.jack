@@ -1,0 +1,25 @@
+class StringTest {
+    function void main() {
+        var String s;
+        var int length;
+
+        let s = String.new(20);
+
+        do s.appendChar(72);
+        do s.appendChar(101);
+        do s.appendChar(108);
+        do s.appendChar(108);
+        do s.appendChar(111);
+
+        let length = s.length();
+
+        do Output.printString(s);
+        do Output.println();
+        do Output.printInt(length);
+        do Output.println();
+
+        do s.dispose();
+
+        return;
+    }
+}
