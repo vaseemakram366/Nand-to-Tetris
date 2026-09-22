@@ -1,0 +1,34 @@
+class MethodTest {
+    field int value;
+
+    constructor MethodTest new(int x) {
+        let value = x;
+        return this;
+    }
+
+    method void add(int x) {
+        let value = value + x;
+        return;
+    }
+
+    method int getValue() {
+        return value;
+    }
+
+    function void main() {
+        var MethodTest obj;
+        var int result;
+
+        let obj = MethodTest.new(10);
+
+        do obj.add(20);
+        do obj.add(5);
+
+        let result = obj.getValue();
+
+        do Output.printInt(result);
+        do Output.println();
+
+        return;
+    }
+}
