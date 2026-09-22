@@ -1,0 +1,16 @@
+class FunctionCallTest {
+    function void main() {
+        var int result;
+
+        let result = FunctionCallTest.add(15, 25);
+
+        do Output.printInt(result);
+        do Output.println();
+
+        return;
+    }
+
+    function int add(int a, int b) {
+        return a + b;
+    }
+}
