@@ -1,0 +1,27 @@
+class ConstructorTest {
+    field int x;
+    field int y;
+
+    constructor ConstructorTest new(int a, int b) {
+        let x = a;
+        let y = b;
+        return this;
+    }
+
+    method int sum() {
+        return x + y;
+    }
+
+    function void main() {
+        var ConstructorTest obj;
+        var int result;
+
+        let obj = ConstructorTest.new(15, 25);
+        let result = obj.sum();
+
+        do Output.printInt(result);
+        do Output.println();
+
+        return;
+    }
+}
