@@ -1,0 +1,34 @@
+class StaticTest {
+    static int count;
+
+    function void initialize() {
+        let count = 0;
+        return;
+    }
+
+    function void increment() {
+        let count = count + 1;
+        return;
+    }
+
+    function int getCount() {
+        return count;
+    }
+
+    function void main() {
+        var int result;
+
+        do StaticTest.initialize();
+
+        do StaticTest.increment();
+        do StaticTest.increment();
+        do StaticTest.increment();
+
+        let result = StaticTest.getCount();
+
+        do Output.printInt(result);
+        do Output.println();
+
+        return;
+    }
+}
