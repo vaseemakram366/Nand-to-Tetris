@@ -1,0 +1,19 @@
+class NestedExpressionTest {
+    function void main() {
+        var int a;
+        var int b;
+        var int c;
+        var int result;
+
+        let a = 2;
+        let b = 3;
+        let c = 4;
+
+        let result = ((a + b) * c) - ((a * c) + b);
+
+        do Output.printInt(result);
+        do Output.println();
+
+        return;
+    }
+}
