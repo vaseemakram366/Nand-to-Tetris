@@ -1,0 +1,17 @@
+class UnaryOperationTest {
+    function void main() {
+        var int x;
+        var int y;
+        var int result;
+
+        let x = 10;
+        let y = -x;
+
+        let result = y + (~x);
+
+        do Output.printInt(result);
+        do Output.println();
+
+        return;
+    }
+}
