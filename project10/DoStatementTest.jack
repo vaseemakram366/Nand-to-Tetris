@@ -1,0 +1,14 @@
+class DoStatementTest {
+    function void main() {
+        var String message;
+
+        let message = "Hello from Jack";
+
+        do Output.printString(message);
+        do Output.println();
+        do Output.printInt(2026);
+        do Output.println();
+
+        return;
+    }
+}
