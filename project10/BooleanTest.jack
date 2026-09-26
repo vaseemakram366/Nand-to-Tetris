@@ -1,0 +1,19 @@
+class BooleanTest {
+    function void main() {
+        var boolean a;
+        var boolean b;
+
+        let a = true;
+        let b = false;
+
+        if (a & (~b)) {
+            do Output.printString("TRUE");
+        } else {
+            do Output.printString("FALSE");
+        }
+
+        do Output.println();
+
+        return;
+    }
+}
