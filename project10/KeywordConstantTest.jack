@@ -1,0 +1,39 @@
+class KeywordConstantTest {
+    field int value;
+
+    constructor KeywordConstantTest new() {
+        let value = 0;
+        return this;
+    }
+
+    method void setValue(boolean flag) {
+        if (flag) {
+            let value = 1;
+        } else {
+            let value = 0;
+        }
+
+        return;
+    }
+
+    method int getValue() {
+        return value;
+    }
+
+    function void main() {
+        var KeywordConstantTest obj;
+        var KeywordConstantTest empty;
+        var int result;
+
+        let obj = KeywordConstantTest.new();
+        let empty = null;
+
+        do obj.setValue(true);
+        let result = obj.getValue();
+
+        do Output.printInt(result);
+        do Output.println();
+
+        return;
+    }
+}
