@@ -1,0 +1,17 @@
+class IfElseTest {
+    function void main() {
+        var int number;
+
+        let number = 15;
+
+        if (number > 10) {
+            do Output.printString("Greater than 10");
+        } else {
+            do Output.printString("10 or less");
+        }
+
+        do Output.println();
+
+        return;
+    }
+}
