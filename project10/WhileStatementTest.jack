@@ -1,0 +1,19 @@
+class WhileStatementTest {
+    function void main() {
+        var int i;
+        var int sum;
+
+        let i = 1;
+        let sum = 0;
+
+        while (i <= 10) {
+            let sum = sum + i;
+            let i = i + 1;
+        }
+
+        do Output.printInt(sum);
+        do Output.println();
+
+        return;
+    }
+}
