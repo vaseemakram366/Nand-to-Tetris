@@ -1,0 +1,32 @@
+class LetStatementTest {
+    field int value;
+
+    constructor LetStatementTest new() {
+        let value = 0;
+        return this;
+    }
+
+    method void update(int x) {
+        let value = x * 2;
+        return;
+    }
+
+    method int getValue() {
+        return value;
+    }
+
+    function void main() {
+        var LetStatementTest obj;
+        var int result;
+
+        let obj = LetStatementTest.new();
+        do obj.update(25);
+
+        let result = obj.getValue();
+
+        do Output.printInt(result);
+        do Output.println();
+
+        return;
+    }
+}
