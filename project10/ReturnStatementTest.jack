@@ -1,0 +1,16 @@
+class ReturnStatementTest {
+    function int square(int x) {
+        return x * x;
+    }
+
+    function void main() {
+        var int result;
+
+        let result = ReturnStatementTest.square(7);
+
+        do Output.printInt(result);
+        do Output.println();
+
+        return;
+    }
+}
