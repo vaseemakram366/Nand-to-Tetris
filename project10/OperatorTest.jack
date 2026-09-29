@@ -1,0 +1,32 @@
+class OperatorTest {
+    function void main() {
+        var int a;
+        var int b;
+        var int result;
+
+        let a = 20;
+        let b = 6;
+
+        let result = a + b;
+        let result = result - b;
+        let result = result * b;
+        let result = result / b;
+
+        if (a > b) {
+            let result = result + 1;
+        }
+
+        if (a < b) {
+            let result = result + 1;
+        }
+
+        if (a = 20) {
+            let result = result + 1;
+        }
+
+        do Output.printInt(result);
+        do Output.println();
+
+        return;
+    }
+}
