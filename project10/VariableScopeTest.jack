@@ -1,0 +1,30 @@
+class VariableScopeTest {
+    field int fieldValue;
+    static int staticValue;
+
+    constructor VariableScopeTest new(int x) {
+        let fieldValue = x;
+        let staticValue = 100;
+        return this;
+    }
+
+    method int calculate(int x) {
+        var int localValue;
+
+        let localValue = x + fieldValue;
+        return localValue;
+    }
+
+    function void main() {
+        var VariableScopeTest obj;
+        var int result;
+
+        let obj = VariableScopeTest.new(20);
+        let result = obj.calculate(30);
+
+        do Output.printInt(result);
+        do Output.println();
+
+        return;
+    }
+}
