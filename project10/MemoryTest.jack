@@ -1,0 +1,19 @@
+class MemoryTest {
+    function void main() {
+        var int address;
+        var int value;
+
+        let address = Memory.alloc(1);
+        let value = 123;
+
+        do Memory.poke(address, value);
+        let value = Memory.peek(address);
+
+        do Output.printInt(value);
+        do Output.println();
+
+        do Memory.deAlloc(address);
+
+        return;
+    }
+}
