@@ -1,0 +1,21 @@
+class LogicalOperatorTest {
+    function void main() {
+        var boolean a;
+        var boolean b;
+
+        let a = true;
+        let b = false;
+
+        if (a & (~b)) {
+            do Output.printString("AND condition true");
+        }
+
+        if (a | b) {
+            do Output.printString("OR condition true");
+        }
+
+        do Output.println();
+
+        return;
+    }
+}
