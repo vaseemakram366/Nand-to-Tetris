@@ -1,0 +1,25 @@
+class ComparisonTest {
+    function void main() {
+        var int a;
+        var int b;
+
+        let a = 10;
+        let b = 20;
+
+        if (a < b) {
+            do Output.printString("LESS");
+        }
+
+        if (a > b) {
+            do Output.printString("GREATER");
+        }
+
+        if (a = 10) {
+            do Output.printString("EQUAL");
+        }
+
+        do Output.println();
+
+        return;
+    }
+}
