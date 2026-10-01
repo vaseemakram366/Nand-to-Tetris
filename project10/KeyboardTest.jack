@@ -1,0 +1,15 @@
+class KeyboardTest {
+    function void main() {
+        var char key;
+
+        do Output.printString("Press a key: ");
+        let key = Keyboard.readChar();
+
+        do Output.println();
+        do Output.printString("You pressed: ");
+        do Output.printChar(key);
+        do Output.println();
+
+        return;
+    }
+}
