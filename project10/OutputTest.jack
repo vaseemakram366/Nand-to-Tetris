@@ -1,0 +1,14 @@
+class OutputTest {
+    function void main() {
+        do Output.printString("Hello Jack");
+        do Output.println();
+
+        do Output.printInt(12345);
+        do Output.println();
+
+        do Output.printChar(65);
+        do Output.println();
+
+        return;
+    }
+}
