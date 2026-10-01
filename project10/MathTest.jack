@@ -1,0 +1,25 @@
+class MathTest {
+    function void main() {
+        var int result;
+
+        let result = Math.multiply(6, 7);
+
+        do Output.printString("Multiply: ");
+        do Output.printInt(result);
+        do Output.println();
+
+        let result = Math.divide(100, 4);
+
+        do Output.printString("Divide: ");
+        do Output.printInt(result);
+        do Output.println();
+
+        let result = Math.abs(-25);
+
+        do Output.printString("Absolute: ");
+        do Output.printInt(result);
+        do Output.println();
+
+        return;
+    }
+}
