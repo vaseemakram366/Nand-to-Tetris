@@ -1,0 +1,15 @@
+class ScreenTest {
+    function void main() {
+        do Screen.clearScreen();
+
+        do Screen.setColor(true);
+        do Screen.drawRectangle(20, 20, 100, 100);
+
+        do Screen.setColor(false);
+        do Screen.drawRectangle(40, 40, 80, 80);
+
+        do Sys.wait(1000);
+
+        return;
+    }
+}
