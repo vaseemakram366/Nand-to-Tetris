@@ -1,0 +1,28 @@
+class ArrayMethodTest {
+    function void main() {
+        var Array numbers;
+        var int i;
+        var int value;
+
+        let numbers = Array.new(3);
+
+        let numbers[0] = 10;
+        let numbers[1] = 20;
+        let numbers[2] = 30;
+
+        let i = 0;
+
+        while (i < 3) {
+            let value = numbers[i];
+
+            do Output.printInt(value);
+            do Output.println();
+
+            let i = i + 1;
+        }
+
+        do numbers.dispose();
+
+        return;
+    }
+}
