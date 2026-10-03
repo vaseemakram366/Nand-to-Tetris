@@ -1,0 +1,26 @@
+class MemoryAllocationTest {
+    function void main() {
+        var int address1;
+        var int address2;
+        var int value;
+
+        let address1 = Memory.alloc(1);
+        let address2 = Memory.alloc(1);
+
+        do Memory.poke(address1, 100);
+        do Memory.poke(address2, 200);
+
+        let value = Memory.peek(address1);
+        do Output.printInt(value);
+        do Output.println();
+
+        let value = Memory.peek(address2);
+        do Output.printInt(value);
+        do Output.println();
+
+        do Memory.deAlloc(address1);
+        do Memory.deAlloc(address2);
+
+        return;
+    }
+}
