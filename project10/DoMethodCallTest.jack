@@ -1,0 +1,31 @@
+class DoMethodCallTest {
+    field int value;
+
+    constructor DoMethodCallTest new(int x) {
+        let value = x;
+        return this;
+    }
+
+    method void increase(int amount) {
+        let value = value + amount;
+        return;
+    }
+
+    method void printValue() {
+        do Output.printInt(value);
+        do Output.println();
+        return;
+    }
+
+    function void main() {
+        var DoMethodCallTest obj;
+
+        let obj = DoMethodCallTest.new(10);
+
+        do obj.increase(5);
+        do obj.increase(15);
+        do obj.printValue();
+
+        return;
+    }
+}
