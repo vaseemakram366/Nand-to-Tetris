@@ -1,0 +1,32 @@
+class ThisKeywordTest {
+    field int value;
+
+    constructor ThisKeywordTest new(int x) {
+        let value = x;
+        return this;
+    }
+
+    method ThisKeywordTest getObject() {
+        return this;
+    }
+
+    method int getValue() {
+        return value;
+    }
+
+    function void main() {
+        var ThisKeywordTest obj;
+        var ThisKeywordTest sameObj;
+        var int result;
+
+        let obj = ThisKeywordTest.new(50);
+        let sameObj = obj.getObject();
+
+        let result = sameObj.getValue();
+
+        do Output.printInt(result);
+        do Output.println();
+
+        return;
+    }
+}
