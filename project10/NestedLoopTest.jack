@@ -1,0 +1,26 @@
+class NestedLoopTest {
+    function void main() {
+        var int i;
+        var int j;
+        var int result;
+
+        let i = 1;
+        let result = 0;
+
+        while (i <= 3) {
+            let j = 1;
+
+            while (j <= 3) {
+                let result = result + (i * j);
+                let j = j + 1;
+            }
+
+            let i = i + 1;
+        }
+
+        do Output.printInt(result);
+        do Output.println();
+
+        return;
+    }
+}
