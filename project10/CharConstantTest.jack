@@ -1,0 +1,17 @@
+class CharConstantTest {
+    function void main() {
+        var char letter;
+
+        let letter = 65;
+
+        do Output.printChar(letter);
+        do Output.println();
+
+        let letter = 66;
+
+        do Output.printChar(letter);
+        do Output.println();
+
+        return;
+    }
+}
