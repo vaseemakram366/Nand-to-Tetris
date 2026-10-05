@@ -1,0 +1,28 @@
+class MultipleObjectsTest {
+    field int value;
+
+    constructor MultipleObjectsTest new(int x) {
+        let value = x;
+        return this;
+    }
+
+    method int getValue() {
+        return value;
+    }
+
+    function void main() {
+        var MultipleObjectsTest first;
+        var MultipleObjectsTest second;
+        var int result;
+
+        let first = MultipleObjectsTest.new(10);
+        let second = MultipleObjectsTest.new(20);
+
+        let result = first.getValue() + second.getValue();
+
+        do Output.printInt(result);
+        do Output.println();
+
+        return;
+    }
+}
