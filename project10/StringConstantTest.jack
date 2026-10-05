@@ -1,0 +1,15 @@
+class StringConstantTest {
+    function void main() {
+        var String message;
+
+        let message = "Hello, Nand2Tetris!";
+
+        do Output.printString(message);
+        do Output.println();
+
+        do Output.printString("Testing string constants");
+        do Output.println();
+
+        return;
+    }
+}
