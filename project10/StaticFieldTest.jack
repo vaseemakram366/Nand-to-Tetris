@@ -1,0 +1,36 @@
+class StaticFieldTest {
+    static int count;
+    field int value;
+
+    constructor StaticFieldTest new(int x) {
+        let value = x;
+        let count = count + 1;
+        return this;
+    }
+
+    function int getCount() {
+        return count;
+    }
+
+    method int getValue() {
+        return value;
+    }
+
+    function void main() {
+        var StaticFieldTest first;
+        var StaticFieldTest second;
+        var int result;
+
+        let count = 0;
+
+        let first = StaticFieldTest.new(10);
+        let second = StaticFieldTest.new(20);
+
+        let result = StaticFieldTest.getCount();
+
+        do Output.printInt(result);
+        do Output.println();
+
+        return;
+    }
+}   
