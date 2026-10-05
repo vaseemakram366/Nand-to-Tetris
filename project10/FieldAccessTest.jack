@@ -1,0 +1,41 @@
+class FieldAccessTest {
+    field int x;
+    field int y;
+
+    constructor FieldAccessTest new(int a, int b) {
+        let x = a;
+        let y = b;
+        return this;
+    }
+
+    method void updateX(int value) {
+        let x = value;
+        return;
+    }
+
+    method void updateY(int value) {
+        let y = value;
+        return;
+    }
+
+    method int sum() {
+        return x + y;
+    }
+
+    function void main() {
+        var FieldAccessTest obj;
+        var int result;
+
+        let obj = FieldAccessTest.new(10, 20);
+
+        do obj.updateX(30);
+        do obj.updateY(40);
+
+        let result = obj.sum();
+
+        do Output.printInt(result);
+        do Output.println();
+
+        return;
+    }
+}
