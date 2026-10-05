@@ -1,0 +1,17 @@
+class NullTest {
+    function void main() {
+        var NullTest obj;
+
+        let obj = null;
+
+        if (obj = null) {
+            do Output.printString("Object is null");
+        } else {
+            do Output.printString("Object is not null");
+        }
+
+        do Output.println();
+
+        return;
+    }
+}
