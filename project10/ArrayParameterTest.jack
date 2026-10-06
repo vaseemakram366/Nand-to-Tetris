@@ -1,0 +1,37 @@
+class ArrayParameterTest {
+    function int sumArray(Array arr, int size) {
+        var int i;
+        var int sum;
+
+        let i = 0;
+        let sum = 0;
+
+        while (i < size) {
+            let sum = sum + arr[i];
+            let i = i + 1;
+        }
+
+        return sum;
+    }
+
+    function void main() {
+        var Array numbers;
+        var int result;
+
+        let numbers = Array.new(4);
+
+        let numbers[0] = 10;
+        let numbers[1] = 20;
+        let numbers[2] = 30;
+        let numbers[3] = 40;
+
+        let result = ArrayParameterTest.sumArray(numbers, 4);
+
+        do Output.printInt(result);
+        do Output.println();
+
+        do numbers.dispose();
+
+        return;
+    }
+}
