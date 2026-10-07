@@ -1,0 +1,22 @@
+class UnaryExpressionTest {
+    function void main() {
+        var int a;
+        var int result;
+
+        let a = 10;
+
+        let result = -a;
+        do Output.printInt(result);
+        do Output.println();
+
+        let result = ~a;
+        do Output.printInt(result);
+        do Output.println();
+
+        let result = -(a + 5);
+        do Output.printInt(result);
+        do Output.println();
+
+        return;
+    }
+}
