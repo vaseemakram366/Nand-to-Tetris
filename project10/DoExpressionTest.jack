@@ -1,0 +1,19 @@
+class DoExpressionTest {
+    function void main() {
+        var int result;
+
+        do DoExpressionTest.printResult(10 + 20);
+        do DoExpressionTest.printResult(5 * 6);
+
+        let result = 100 / 4;
+        do DoExpressionTest.printResult(result);
+
+        return;
+    }
+
+    function void printResult(int value) {
+        do Output.printInt(value);
+        do Output.println();
+        return;
+    }
+}
