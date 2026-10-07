@@ -1,0 +1,27 @@
+class NestedIfTest {
+    function void main() {
+        var int a;
+        var int b;
+
+        let a = 20;
+        let b = 10;
+
+        if (a > 0) {
+            if (b > 0) {
+                if (a > b) {
+                    do Output.printString("A is greater");
+                } else {
+                    do Output.printString("B is greater or equal");
+                }
+            } else {
+                do Output.printString("B is not positive");
+            }
+        } else {
+            do Output.printString("A is not positive");
+        }
+
+        do Output.println();
+
+        return;
+    }
+}
