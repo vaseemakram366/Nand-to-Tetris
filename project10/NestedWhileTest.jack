@@ -1,0 +1,26 @@
+class NestedWhileTest {
+    function void main() {
+        var int i;
+        var int j;
+        var int count;
+
+        let i = 1;
+        let count = 0;
+
+        while (i <= 3) {
+            let j = 1;
+
+            while (j <= 3) {
+                let count = count + 1;
+                let j = j + 1;
+            }
+
+            let i = i + 1;
+        }
+
+        do Output.printInt(count);
+        do Output.println();
+
+        return;
+    }
+}
