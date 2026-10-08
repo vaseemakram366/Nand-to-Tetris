@@ -1,0 +1,22 @@
+class BooleanExpressionTest {
+    function void main() {
+        var int a;
+        var int b;
+        var boolean result;
+
+        let a = 10;
+        let b = 20;
+
+        let result = (a < b) & (b > 15);
+
+        if (result) {
+            do Output.printString("Both conditions are true");
+        } else {
+            do Output.printString("Condition is false");
+        }
+
+        do Output.println();
+
+        return;
+    }
+}
