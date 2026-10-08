@@ -1,0 +1,17 @@
+class DoStringTest {
+    function void main() {
+        var String first;
+        var String second;
+
+        let first = "Hello";
+        let second = "Nand2Tetris";
+
+        do Output.printString(first);
+        do Output.println();
+
+        do Output.printString(second);
+        do Output.println();
+
+        return;
+    }
+}
