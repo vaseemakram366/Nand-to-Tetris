@@ -1,0 +1,31 @@
+class MethodParameterTest {
+    field int value;
+
+    constructor MethodParameterTest new(int initialValue) {
+        let value = initialValue;
+        return this;
+    }
+
+    method int add(int number) {
+        let value = value + number;
+        return value;
+    }
+
+    method int getValue() {
+        return value;
+    }
+
+    function void main() {
+        var MethodParameterTest obj;
+        var int result;
+
+        let obj = MethodParameterTest.new(10);
+        let result = obj.add(5);
+
+        do Output.printString("Result: ");
+        do Output.printInt(result);
+        do Output.println();
+
+        return;
+    }
+}
