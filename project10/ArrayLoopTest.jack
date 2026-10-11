@@ -1,0 +1,24 @@
+class ArrayLoopTest {
+    function void main() {
+        var Array numbers;
+        var int i;
+        var int total;
+
+        let numbers = Array.new(5);
+        let i = 0;
+        let total = 0;
+
+        while (i < 5) {
+            let numbers[i] = (i + 1) * 10;
+            let total = total + numbers[i];
+            let i = i + 1;
+        }
+
+        do Output.printString("Total: ");
+        do Output.printInt(total);
+        do Output.println();
+
+        do numbers.dispose();
+        return;
+    }
+}
