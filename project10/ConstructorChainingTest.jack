@@ -1,0 +1,38 @@
+class ConstructorChainingTest {
+    field int x;
+    field int y;
+
+    constructor ConstructorChainingTest new(int a, int b) {
+        let x = a;
+        let y = b;
+        return this;
+    }
+
+    method int sum() {
+        return x + y;
+    }
+
+    method int multiply() {
+        return x * y;
+    }
+
+    function void main() {
+        var ConstructorChainingTest obj;
+        var int result;
+
+        let obj = ConstructorChainingTest.new(4, 5);
+
+        let result = obj.sum();
+        do Output.printString("Sum: ");
+        do Output.printInt(result);
+        do Output.println();
+
+        let result = obj.multiply();
+        do Output.printString("Product: ");
+        do Output.printInt(result);
+        do Output.println();
+
+        do obj.dispose();
+        return;
+    }
+}z
