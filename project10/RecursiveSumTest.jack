@@ -1,0 +1,21 @@
+class RecursiveSumTest {
+    function int sum(int n) {
+        if (n < 1) {
+            return 0;
+        }
+
+        return n + RecursiveSumTest.sum(n - 1);
+    }
+
+    function void main() {
+        var int result;
+
+        let result = RecursiveSumTest.sum(5);
+
+        do Output.printString("Sum: ");
+        do Output.printInt(result);
+        do Output.println();
+
+        return;
+    }
+}
