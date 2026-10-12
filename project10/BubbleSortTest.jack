@@ -1,0 +1,46 @@
+ class BubbleSortTest {
+    function void main() {
+        var Array numbers;
+        var int i, j, temp;
+        var int n;
+
+        let n = 5;
+        let numbers = Array.new(n);
+
+        let numbers[0] = 5;
+        let numbers[1] = 2;
+        let numbers[2] = 4;
+        let numbers[3] = 1;
+        let numbers[4] = 3;
+
+        let i = 0;
+        while (i < n) {
+            let j = 0;
+
+            while (j < (n - i - 1)) {
+                if (numbers[j] > numbers[j + 1]) {
+                    let temp = numbers[j];
+                    let numbers[j] = numbers[j + 1];
+                    let numbers[j + 1] = temp;
+                }
+
+                let j = j + 1;
+            }
+
+            let i = i + 1;
+        }
+
+        do Output.printString("Sorted: ");
+        let i = 0;
+
+        while (i < n) {
+            do Output.printInt(numbers[i]);
+            do Output.printString(" ");
+            let i = i + 1;
+        }
+
+        do Output.println();
+        do numbers.dispose();
+        return;
+    }
+}
