@@ -1,0 +1,35 @@
+class NestedMethodCallTest {
+    field int value;
+
+    constructor NestedMethodCallTest new(int n) {
+        let value = n;
+        return this;
+    }
+
+    method int doubleValue() {
+        return value * 2;
+    }
+
+    method int addFive() {
+        return value + 5;
+    }
+
+    method int calculate() {
+        return (doubleValue() + addFive());
+    }
+
+    function void main() {
+        var NestedMethodCallTest obj;
+        var int result;
+
+        let obj = NestedMethodCallTest.new(10);
+        let result = obj.calculate();
+
+        do Output.printString("Result: ");
+        do Output.printInt(result);
+        do Output.println();
+
+        do obj.dispose();
+        return;
+    }
+}
