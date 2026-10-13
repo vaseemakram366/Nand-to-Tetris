@@ -1,0 +1,43 @@
+class BinarySearchTest {
+    function void main() {
+        var Array numbers;
+        var int low, high, mid, target, found;
+
+        let numbers = Array.new(6);
+        let numbers[0] = 3;
+        let numbers[1] = 7;
+        let numbers[2] = 12;
+        let numbers[3] = 18;
+        let numbers[4] = 25;
+        let numbers[5] = 31;
+
+        let target = 18;
+        let low = 0;
+        let high = 5;
+        let found = 0;
+
+        while ((low < (high + 1)) & (found = 0)) {
+            let mid = (low + high) / 2;
+
+            if (numbers[mid] = target) {
+                let found = 1;
+            } else {
+                if (numbers[mid] < target) {
+                    let low = mid + 1;
+                } else {
+                    let high = mid - 1;
+                }
+            }
+        }
+
+        if (found = 1) {
+            do Output.printString("Target found");
+        } else {
+            do Output.printString("Target not found");
+        }
+
+        do Output.println();
+        do numbers.dispose();
+        return;
+    }
+}
