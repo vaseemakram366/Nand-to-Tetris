@@ -1,0 +1,34 @@
+class LinearSearchTest {
+    function void main() {
+        var Array numbers;
+        var int i, target, found;
+
+        let numbers = Array.new(5);
+        let numbers[0] = 12;
+        let numbers[1] = 7;
+        let numbers[2] = 25;
+        let numbers[3] = 9;
+        let numbers[4] = 18;
+
+        let target = 25;
+        let i = 0;
+        let found = 0;
+
+        while (i < 5) {
+            if (numbers[i] = target) {
+                let found = 1;
+            }
+            let i = i + 1;
+        }
+
+        if (found = 1) {
+            do Output.printString("Target found");
+        } else {
+            do Output.printString("Target not found");
+        }
+
+        do Output.println();
+        do numbers.dispose();
+        return;
+    }
+}
