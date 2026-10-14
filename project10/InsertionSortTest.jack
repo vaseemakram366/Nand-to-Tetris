@@ -1,0 +1,43 @@
+class InsertionSortTest {
+    function void main() {
+        var Array numbers;
+        var int i, j, key, n;
+
+        let n = 5;
+        let numbers = Array.new(n);
+
+        let numbers[0] = 9;
+        let numbers[1] = 4;
+        let numbers[2] = 7;
+        let numbers[3] = 1;
+        let numbers[4] = 5;
+
+        let i = 1;
+
+        while (i < n) {
+            let key = numbers[i];
+            let j = i - 1;
+
+            while ((j > -1) & (numbers[j] > key)) {
+                let numbers[j + 1] = numbers[j];
+                let j = j - 1;
+            }
+
+            let numbers[j + 1] = key;
+            let i = i + 1;
+        }
+
+        do Output.printString("Sorted: ");
+        let i = 0;
+
+        while (i < n) {
+            do Output.printInt(numbers[i]);
+            do Output.printString(" ");
+            let i = i + 1;
+        }
+
+        do Output.println();
+        do numbers.dispose();
+        return;
+    }
+}
