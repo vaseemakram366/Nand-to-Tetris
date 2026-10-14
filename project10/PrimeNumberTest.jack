@@ -1,0 +1,28 @@
+class PrimeNumberTest {
+    function void main() {
+        var int number;
+        var int divisor;
+        var int isPrime;
+
+        let number = 17;
+        let divisor = 2;
+        let isPrime = 1;
+
+        while ((divisor < number) & (isPrime = 1)) {
+            if ((number / divisor) * divisor = number) {
+                let isPrime = 0;
+            }
+
+            let divisor = divisor + 1;
+        }
+
+        if (isPrime = 1) {
+            do Output.printString("Prime number");
+        } else {
+            do Output.printString("Not a prime number");
+        }
+
+        do Output.println();
+        return;
+    }
+}
