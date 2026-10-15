@@ -1,0 +1,27 @@
+class PalindromeNumberTest {
+    function void main() {
+        var int number;
+        var int original;
+        var int reversed;
+        var int digit;
+
+        let number = 12321;
+        let original = number;
+        let reversed = 0;
+
+        while (number > 0) {
+            let digit = number - (number / 10) * 10;
+            let reversed = reversed * 10 + digit;
+            let number = number / 10;
+        }
+
+        if (original = reversed) {
+            do Output.printString("Palindrome number");
+        } else {
+            do Output.printString("Not a palindrome number");
+        }
+
+        do Output.println();
+        return;
+    }
+}
