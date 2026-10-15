@@ -1,0 +1,27 @@
+class ArmstrongNumberTest {
+    function void main() {
+        var int number;
+        var int original;
+        var int digit;
+        var int sum;
+
+        let number = 153;
+        let original = number;
+        let sum = 0;
+
+        while (number > 0) {
+            let digit = number - (number / 10) * 10;
+            let sum = sum + digit * digit * digit;
+            let number = number / 10;
+        }
+
+        if (sum = original) {
+            do Output.printString("Armstrong number");
+        } else {
+            do Output.printString("Not an Armstrong number");
+        }
+
+        do Output.println();
+        return;
+    }
+}
