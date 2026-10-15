@@ -1,0 +1,22 @@
+class DigitSumTest {
+    function void main() {
+        var int number;
+        var int digit;
+        var int sum;
+
+        let number = 12345;
+        let sum = 0;
+
+        while (number > 0) {
+            let digit = number - (number / 10) * 10;
+            let sum = sum + digit;
+            let number = number / 10;
+        }
+
+        do Output.printString("Digit Sum: ");
+        do Output.printInt(sum);
+        do Output.println();
+
+        return;
+    }
+}
