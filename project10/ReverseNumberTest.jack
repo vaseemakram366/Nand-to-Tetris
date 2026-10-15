@@ -1,0 +1,22 @@
+class ReverseNumberTest {
+    function void main() {
+        var int number;
+        var int digit;
+        var int reversed;
+
+        let number = 12345;
+        let reversed = 0;
+
+        while (number > 0) {
+            let digit = number - (number / 10) * 10;
+            let reversed = reversed * 10 + digit;
+            let number = number / 10;
+        }
+
+        do Output.printString("Reversed: ");
+        do Output.printInt(reversed);
+        do Output.println();
+
+        return;
+    }
+}
