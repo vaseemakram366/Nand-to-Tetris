@@ -1,0 +1,28 @@
+class PerfectNumberTest {
+    function void main() {
+        var int number;
+        var int divisor;
+        var int sum;
+
+        let number = 28;
+        let divisor = 1;
+        let sum = 0;
+
+        while (divisor < number) {
+            if ((number / divisor) * divisor = number) {
+                let sum = sum + divisor;
+            }
+
+            let divisor = divisor + 1;
+        }
+
+        if (sum = number) {
+            do Output.printString("Perfect number");
+        } else {
+            do Output.printString("Not a perfect number");
+        }
+
+        do Output.println();
+        return;
+    }
+}
