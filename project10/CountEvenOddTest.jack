@@ -1,0 +1,44 @@
+class CountEvenOddTest {
+    function void main() {
+        var Array numbers;
+        var int i;
+        var int evenCount;
+        var int oddCount;
+        var int n;
+
+        let n = 6;
+        let numbers = Array.new(n);
+
+        let numbers[0] = 12;
+        let numbers[1] = 7;
+        let numbers[2] = 9;
+        let numbers[3] = 4;
+        let numbers[4] = 16;
+        let numbers[5] = 3;
+
+        let i = 0;
+        let evenCount = 0;
+        let oddCount = 0;
+
+        while (i < n) {
+            if ((numbers[i] / 2) * 2 = numbers[i]) {
+                let evenCount = evenCount + 1;
+            } else {
+                let oddCount = oddCount + 1;
+            }
+
+            let i = i + 1;
+        }
+
+        do Output.printString("Even: ");
+        do Output.printInt(evenCount);
+        do Output.println();
+
+        do Output.printString("Odd: ");
+        do Output.printInt(oddCount);
+        do Output.println();
+
+        do numbers.dispose();
+        return;
+    }
+}
