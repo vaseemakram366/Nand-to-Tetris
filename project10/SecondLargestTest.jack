@@ -1,0 +1,43 @@
+class SecondLargestTest {
+    function void main() {
+        var Array numbers;
+        var int i;
+        var int largest;
+        var int second;
+        var int n;
+
+        let n = 6;
+        let numbers = Array.new(n);
+
+        let numbers[0] = 12;
+        let numbers[1] = 45;
+        let numbers[2] = 7;
+        let numbers[3] = 32;
+        let numbers[4] = 45;
+        let numbers[5] = 28;
+
+        let largest = -32768;
+        let second = -32768;
+        let i = 0;
+
+        while (i < n) {
+            if (numbers[i] > largest) {
+                let second = largest;
+                let largest = numbers[i];
+            } else {
+                if ((numbers[i] > second) & (numbers[i] < largest)) {
+                    let second = numbers[i];
+                }
+            }
+
+            let i = i + 1;
+        }
+
+        do Output.printString("Second largest: ");
+        do Output.printInt(second);
+        do Output.println();
+
+        do numbers.dispose();
+        return;
+    }
+}
