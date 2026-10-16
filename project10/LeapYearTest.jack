@@ -1,0 +1,30 @@
+class LeapYearTest {
+    function void main() {
+        var int year;
+        var int isLeap;
+
+        let year = 2024;
+        let isLeap = 0;
+
+        if ((year / 400) * 400 = year) {
+            let isLeap = 1;
+        } else {
+            if ((year / 100) * 100 = year) {
+                let isLeap = 0;
+            } else {
+                if ((year / 4) * 4 = year) {
+                    let isLeap = 1;
+                }
+            }
+        }
+
+        if (isLeap = 1) {
+            do Output.printString("Leap year");
+        } else {
+            do Output.printString("Not a leap year");
+        }
+
+        do Output.println();
+        return;
+    }
+}   
