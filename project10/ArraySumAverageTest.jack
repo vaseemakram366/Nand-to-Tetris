@@ -1,0 +1,39 @@
+class ArraySumAverageTest {
+    function void main() {
+        var Array numbers;
+        var int i;
+        var int sum;
+        var int average;
+        var int n;
+
+        let n = 5;
+        let numbers = Array.new(n);
+
+        let numbers[0] = 10;
+        let numbers[1] = 20;
+        let numbers[2] = 30;
+        let numbers[3] = 40;
+        let numbers[4] = 50;
+
+        let i = 0;
+        let sum = 0;
+
+        while (i < n) {
+            let sum = sum + numbers[i];
+            let i = i + 1;
+        }
+
+        let average = sum / n;
+
+        do Output.printString("Sum: ");
+        do Output.printInt(sum);
+        do Output.println();
+
+        do Output.printString("Average: ");
+        do Output.printInt(average);
+        do Output.println();
+
+        do numbers.dispose();
+        return;
+    }
+}
