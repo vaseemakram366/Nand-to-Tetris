@@ -1,0 +1,50 @@
+class MatrixAdditionTest {
+    function void main() {
+        var Array a;
+        var Array b;
+        var Array c;
+        var int i;
+        var int j;
+        var int index;
+
+        let a = Array.new(4);
+        let b = Array.new(4);
+        let c = Array.new(4);
+
+        let a[0] = 1;
+        let a[1] = 2;
+        let a[2] = 3;
+        let a[3] = 4;
+
+        let b[0] = 5;
+        let b[1] = 6;
+        let b[2] = 7;
+        let b[3] = 8;
+
+        let i = 0;
+
+        while (i < 4) {
+            let c[i] = a[i] + b[i];
+            let i = i + 1;
+        }
+
+        do Output.printString("Matrix Sum: ");
+        do Output.println();
+
+        let i = 0;
+        while (i < 4) {
+            do Output.printInt(c[i]);
+            do Output.printString(" ");
+            if ((i = 1) | (i = 3)) {
+                do Output.println();
+            }
+            let i = i + 1;
+        }
+
+        do a.dispose();
+        do b.dispose();
+        do c.dispose();
+
+        return;
+    }
+}
