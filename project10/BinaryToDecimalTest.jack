@@ -1,0 +1,25 @@
+class BinaryToDecimalTest {
+    function void main() {
+        var int binary;
+        var int decimal;
+        var int base;
+        var int digit;
+
+        let binary = 1011;
+        let decimal = 0;
+        let base = 1;
+
+        while (binary > 0) {
+            let digit = binary - (binary / 10) * 10;
+            let decimal = decimal + digit * base;
+            let base = base * 2;
+            let binary = binary / 10;
+        }
+
+        do Output.printString("Decimal: ");
+        do Output.printInt(decimal);
+        do Output.println();
+
+        return;
+    }
+}
