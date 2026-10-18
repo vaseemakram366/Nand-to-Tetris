@@ -1,0 +1,55 @@
+class MatrixTransposeTest {
+    function void main() {
+        var Array matrix;
+        var Array transposed;
+        var int i;
+        var int j;
+        var int index;
+
+        let matrix = Array.new(6);
+        let transposed = Array.new(6);
+
+        let matrix[0] = 1;
+        let matrix[1] = 2;
+        let matrix[2] = 3;
+        let matrix[3] = 4;
+        let matrix[4] = 5;
+        let matrix[5] = 6;
+
+        let i = 0;
+
+        while (i < 2) {
+            let j = 0;
+
+            while (j < 3) {
+                let index = j * 2 + i;
+                let transposed[index] = matrix[i * 3 + j];
+                let j = j + 1;
+            }
+
+            let i = i + 1;
+        }
+
+        do Output.printString("Transpose:");
+        do Output.println();
+
+        let i = 0;
+        while (i < 3) {
+            let j = 0;
+
+            while (j < 2) {
+                do Output.printInt(transposed[i * 2 + j]);
+                do Output.printString(" ");
+                let j = j + 1;
+            }
+
+            do Output.println();
+            let i = i + 1;
+        }
+
+        do matrix.dispose();
+        do transposed.dispose();
+
+        return;
+    }
+}
