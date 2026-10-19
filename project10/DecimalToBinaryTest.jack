@@ -1,0 +1,25 @@
+class DecimalToBinaryTest {
+    function void main() {
+        var int number;
+        var int binary;
+        var int place;
+        var int remainder;
+
+        let number = 13;
+        let binary = 0;
+        let place = 1;
+
+        while (number > 0) {
+            let remainder = number - (number / 2) * 2;
+            let binary = binary + remainder * place;
+            let place = place * 10;
+            let number = number / 2;
+        }
+
+        do Output.printString("Binary: ");
+        do Output.printInt(binary);
+        do Output.println();
+
+        return;
+    }
+}
