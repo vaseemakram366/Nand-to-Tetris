@@ -1,0 +1,28 @@
+class PowerCalculationTest {
+    function int power(int base, int exponent) {
+        var int result;
+        var int i;
+
+        let result = 1;
+        let i = 0;
+
+        while (i < exponent) {
+            let result = result * base;
+            let i = i + 1;
+        }
+
+        return result;
+    }
+
+    function void main() {
+        var int result;
+
+        let result = PowerCalculationTest.power(2, 8);
+
+        do Output.printString("Power: ");
+        do Output.printInt(result);
+        do Output.println();
+
+        return;
+    }
+}
