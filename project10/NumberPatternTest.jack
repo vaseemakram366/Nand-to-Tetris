@@ -1,0 +1,23 @@
+class NumberPatternTest {
+    function void main() {
+        var int i;
+        var int j;
+
+        let i = 1;
+
+        while (i < 6) {
+            let j = 1;
+
+            while (j < (i + 1)) {
+                do Output.printInt(j);
+                do Output.printString(" ");
+                let j = j + 1;
+            }
+
+            do Output.println();
+            let i = i + 1;
+        }
+
+        return;
+    }
+}Add Jack number pattern test
