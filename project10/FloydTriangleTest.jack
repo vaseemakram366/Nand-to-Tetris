@@ -1,0 +1,27 @@
+class FloydTriangleTest {
+    function void main() {
+        var int i;
+        var int j;
+        var int number;
+
+        let i = 1;
+        let number = 1;
+
+        while (i < 6) {
+            let j = 0;
+
+            while (j < i) {
+                do Output.printInt(number);
+                do Output.printString(" ");
+
+                let number = number + 1;
+                let j = j + 1;
+            }
+
+            do Output.println();
+            let i = i + 1;
+        }
+
+        return;
+    }
+}
