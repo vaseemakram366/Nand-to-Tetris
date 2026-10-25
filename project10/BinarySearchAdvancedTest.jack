@@ -1,0 +1,48 @@
+class BinarySearchAdvancedTest {
+    function void main() {
+        var Array numbers;
+        var int n, target, low, high, mid, found;
+
+        let n = 7;
+        let numbers = Array.new(n);
+
+        let numbers[0] = 5;
+        let numbers[1] = 12;
+        let numbers[2] = 18;
+        let numbers[3] = 23;
+        let numbers[4] = 31;
+        let numbers[5] = 42;
+        let numbers[6] = 56;
+
+        let target = 31;
+        let low = 0;
+        let high = n - 1;
+        let found = 0;
+
+        while ((low < (high + 1)) & (found = 0)) {
+            let mid = (low + high) / 2;
+
+            if (numbers[mid] = target) {
+                let found = 1;
+            } else {
+                if (numbers[mid] < target) {
+                    let low = mid + 1;
+                } else {
+                    let high = mid - 1;
+                }
+            }
+        }
+
+        if (found = 1) {
+            do Output.printString("Found at index: ");
+            do Output.printInt(mid);
+        } else {
+            do Output.printString("Target not found");
+        }
+
+        do Output.println();
+        do numbers.dispose();
+
+        return;
+    }
+}
