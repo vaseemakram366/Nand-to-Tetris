@@ -1,0 +1,47 @@
+class ArrayRotationTest {
+    function void main() {
+        var Array numbers;
+        var int n, k, i, temp;
+
+        let n = 5;
+        let k = 2;
+        let numbers = Array.new(n);
+
+        let numbers[0] = 1;
+        let numbers[1] = 2;
+        let numbers[2] = 3;
+        let numbers[3] = 4;
+        let numbers[4] = 5;
+
+        let i = 0;
+
+        while (i < k) {
+            let temp = numbers[n - 1];
+            let n = n - 1;
+
+            while (n > 0) {
+                let numbers[n] = numbers[n - 1];
+                let n = n - 1;
+            }
+
+            let numbers[0] = temp;
+            let n = 5;
+            let i = i + 1;
+        }
+
+        do Output.printString("Rotated array: ");
+
+        let i = 0;
+
+        while (i < n) {
+            do Output.printInt(numbers[i]);
+            do Output.printString(" ");
+            let i = i + 1;
+        }
+
+        do Output.println();
+        do numbers.dispose();
+
+        return;
+    }
+}
