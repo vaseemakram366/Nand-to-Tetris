@@ -1,0 +1,36 @@
+class FindMissingNumberTest {
+    function void main() {
+        var Array numbers;
+        var int n;
+        var int i;
+        var int expectedSum;
+        var int actualSum;
+        var int missing;
+
+        let n = 5;
+        let numbers = Array.new(4);
+
+        let numbers[0] = 1;
+        let numbers[1] = 2;
+        let numbers[2] = 4;
+        let numbers[3] = 5;
+
+        let expectedSum = n * (n + 1) / 2;
+        let actualSum = 0;
+        let i = 0;
+
+        while (i < 4) {
+            let actualSum = actualSum + numbers[i];
+            let i = i + 1;
+        }
+
+        let missing = expectedSum - actualSum;
+
+        do Output.printString("Missing number: ");
+        do Output.printInt(missing);
+        do Output.println();
+
+        do numbers.dispose();
+        return;
+    }
+}
