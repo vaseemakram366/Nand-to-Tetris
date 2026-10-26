@@ -1,0 +1,58 @@
+class RemoveDuplicatesTest {
+    function void main() {
+        var Array numbers;
+        var int n;
+        var int i;
+        var int j;
+        var int count;
+        var int duplicate;
+
+        let n = 8;
+        let numbers = Array.new(n);
+
+        let numbers[0] = 2;
+        let numbers[1] = 4;
+        let numbers[2] = 2;
+        let numbers[3] = 7;
+        let numbers[4] = 4;
+        let numbers[5] = 9;
+        let numbers[6] = 7;
+        let numbers[7] = 1;
+
+        let count = 0;
+        let i = 0;
+
+        while (i < n) {
+            let duplicate = 0;
+            let j = 0;
+
+            while (j < count) {
+                if (numbers[i] = numbers[j]) {
+                    let duplicate = 1;
+                }
+                let j = j + 1;
+            }
+
+            if (duplicate = 0) {
+                let numbers[count] = numbers[i];
+                let count = count + 1;
+            }
+
+            let i = i + 1;
+        }
+
+        do Output.printString("Unique elements: ");
+        let i = 0;
+
+        while (i < count) {
+            do Output.printInt(numbers[i]);
+            do Output.printString(" ");
+            let i = i + 1;
+        }
+
+        do Output.println();
+        do numbers.dispose();
+
+        return;
+    }
+}
