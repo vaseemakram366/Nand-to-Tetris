@@ -1,0 +1,37 @@
+class CountFrequencyTest {
+    function void main() {
+        var Array numbers;
+        var int n, target, i, count;
+
+        let n = 8;
+        let numbers = Array.new(n);
+
+        let numbers[0] = 4;
+        let numbers[1] = 2;
+        let numbers[2] = 4;
+        let numbers[3] = 7;
+        let numbers[4] = 4;
+        let numbers[5] = 2;
+        let numbers[6] = 9;
+        let numbers[7] = 4;
+
+        let target = 4;
+        let count = 0;
+        let i = 0;
+
+        while (i < n) {
+            if (numbers[i] = target) {
+                let count = count + 1;
+            }
+
+            let i = i + 1;
+        }
+
+        do Output.printString("Frequency: ");
+        do Output.printInt(count);
+        do Output.println();
+
+        do numbers.dispose();
+        return;
+    }
+}
