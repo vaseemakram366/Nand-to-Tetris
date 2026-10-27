@@ -1,0 +1,50 @@
+class TwoSumTest {
+    function void main() {
+        var Array numbers;
+        var int n, target, i, j, found;
+
+        let n = 6;
+        let numbers = Array.new(n);
+
+        let numbers[0] = 2;
+        let numbers[1] = 7;
+        let numbers[2] = 11;
+        let numbers[3] = 15;
+        let numbers[4] = 3;
+        let numbers[5] = 6;
+
+        let target = 9;
+        let i = 0;
+        let found = 0;
+
+        while ((i < n) & (found = 0)) {
+            let j = i + 1;
+
+            while ((j < n) & (found = 0)) {
+                if ((numbers[i] + numbers[j]) = target) {
+                    let found = 1;
+                } else {
+                    let j = j + 1;
+                }
+            }
+
+            if (found = 0) {
+                let i = i + 1;
+            }
+        }
+
+        if (found = 1) {
+            do Output.printString("Indices: ");
+            do Output.printInt(i);
+            do Output.printString(", ");
+            do Output.printInt(j);
+        } else {
+            do Output.printString("No pair found");
+        }
+
+        do Output.println();
+        do numbers.dispose();
+
+        return;
+    }
+}
