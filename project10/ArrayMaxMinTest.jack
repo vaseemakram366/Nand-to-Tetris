@@ -1,0 +1,44 @@
+class ArrayMaxMinTest {
+    function void main() {
+        var Array numbers;
+        var int i;
+        var int maximum;
+        var int minimum;
+
+        let numbers = Array.new(6);
+
+        let numbers[0] = 34;
+        let numbers[1] = 12;
+        let numbers[2] = 89;
+        let numbers[3] = 45;
+        let numbers[4] = 7;
+        let numbers[5] = 63;
+
+        let maximum = numbers[0];
+        let minimum = numbers[0];
+        let i = 1;
+
+        while (i < 6) {
+            if (numbers[i] > maximum) {
+                let maximum = numbers[i];
+            }
+
+            if (numbers[i] < minimum) {
+                let minimum = numbers[i];
+            }
+
+            let i = i + 1;
+        }
+
+        do Output.printString("Maximum: ");
+        do Output.printInt(maximum);
+        do Output.println();
+
+        do Output.printString("Minimum: ");
+        do Output.printInt(minimum);
+        do Output.println();
+
+        do numbers.dispose();
+        return;
+    }
+}
