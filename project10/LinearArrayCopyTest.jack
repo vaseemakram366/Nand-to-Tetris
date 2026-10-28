@@ -1,0 +1,41 @@
+class LinearArrayCopyTest {
+    function void main() {
+        var Array original;
+        var Array copied;
+        var int i;
+        var int n;
+
+        let n = 5;
+        let original = Array.new(n);
+        let copied = Array.new(n);
+
+        let original[0] = 15;
+        let original[1] = 25;
+        let original[2] = 35;
+        let original[3] = 45;
+        let original[4] = 55;
+
+        let i = 0;
+
+        while (i < n) {
+            let copied[i] = original[i];
+            let i = i + 1;
+        }
+
+        do Output.printString("Copied array: ");
+
+        let i = 0;
+        while (i < n) {
+            do Output.printInt(copied[i]);
+            do Output.printString(" ");
+            let i = i + 1;
+        }
+
+        do Output.println();
+
+        do original.dispose();
+        do copied.dispose();
+
+        return;
+    }
+}
