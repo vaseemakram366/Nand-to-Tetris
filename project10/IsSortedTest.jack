@@ -1,0 +1,38 @@
+class IsSortedTest {
+    function void main() {
+        var Array numbers;
+        var int n, i, isSorted;
+
+        let n = 6;
+        let numbers = Array.new(n);
+
+        let numbers[0] = 3;
+        let numbers[1] = 7;
+        let numbers[2] = 12;
+        let numbers[3] = 18;
+        let numbers[4] = 25;
+        let numbers[5] = 31;
+
+        let i = 0;
+        let isSorted = 1;
+
+        while ((i < (n - 1)) & (isSorted = 1)) {
+            if (numbers[i] > numbers[i + 1]) {
+                let isSorted = 0;
+            }
+
+            let i = i + 1;
+        }
+
+        if (isSorted = 1) {
+            do Output.printString("Array is sorted");
+        } else {
+            do Output.printString("Array is not sorted");
+        }
+
+        do Output.println();
+        do numbers.dispose();
+
+        return;
+    }
+}
