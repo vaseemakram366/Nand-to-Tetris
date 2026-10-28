@@ -1,0 +1,42 @@
+class ReverseArrayTest {
+    function void main() {
+        var Array numbers;
+        var int n, left, right, temp;
+
+        let n = 6;
+        let numbers = Array.new(n);
+
+        let numbers[0] = 10;
+        let numbers[1] = 20;
+        let numbers[2] = 30;
+        let numbers[3] = 40;
+        let numbers[4] = 50;
+        let numbers[5] = 60;
+
+        let left = 0;
+        let right = n - 1;
+
+        while (left < right) {
+            let temp = numbers[left];
+            let numbers[left] = numbers[right];
+            let numbers[right] = temp;
+
+            let left = left + 1;
+            let right = right - 1;
+        }
+
+        do Output.printString("Reversed array: ");
+        let left = 0;
+
+        while (left < n) {
+            do Output.printInt(numbers[left]);
+            do Output.printString(" ");
+            let left = left + 1;
+        }
+
+        do Output.println();
+        do numbers.dispose();
+
+        return;
+    }
+}
