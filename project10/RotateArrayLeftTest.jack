@@ -1,0 +1,42 @@
+class RotateArrayLeftTest {
+    function void main() {
+        var Array numbers;
+        var int i;
+        var int first;
+        var int n;
+
+        let n = 6;
+        let numbers = Array.new(n);
+
+        let numbers[0] = 10;
+        let numbers[1] = 20;
+        let numbers[2] = 30;
+        let numbers[3] = 40;
+        let numbers[4] = 50;
+        let numbers[5] = 60;
+
+        let first = numbers[0];
+        let i = 0;
+
+        while (i < n - 1) {
+            let numbers[i] = numbers[i + 1];
+            let i = i + 1;
+        }
+
+        let numbers[n - 1] = first;
+
+        do Output.printString("Left rotated array: ");
+
+        let i = 0;
+        while (i < n) {
+            do Output.printInt(numbers[i]);
+            do Output.printString(" ");
+            let i = i + 1;
+        }
+
+        do Output.println();
+        do numbers.dispose();
+
+        return;
+    }
+}
