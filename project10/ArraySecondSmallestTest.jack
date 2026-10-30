@@ -1,0 +1,56 @@
+class ArraySecondSmallestTest {
+    function void main() {
+        var Array numbers;
+        var int i;
+        var int smallest;
+        var int secondSmallest;
+        var int found;
+
+        let numbers = Array.new(6);
+
+        let numbers[0] = 35;
+        let numbers[1] = 12;
+        let numbers[2] = 8;
+        let numbers[3] = 25;
+        let numbers[4] = 8;
+        let numbers[5] = 19;
+
+        let smallest = numbers[0];
+        let secondSmallest = 0;
+        let found = 0;
+        let i = 1;
+
+        while (i < 6) {
+            if (numbers[i] < smallest) {
+                let secondSmallest = smallest;
+                let smallest = numbers[i];
+                let found = 1;
+            } else {
+                if (numbers[i] > smallest) {
+                    if (found = 0) {
+                        let secondSmallest = numbers[i];
+                        let found = 1;
+                    } else {
+                        if (numbers[i] < secondSmallest) {
+                            let secondSmallest = numbers[i];
+                        }
+                    }
+                }
+            }
+
+            let i = i + 1;
+        }
+
+        if (found = 1) {
+            do Output.printString("Second smallest: ");
+            do Output.printInt(secondSmallest);
+            do Output.println();
+        } else {
+            do Output.printString("No second smallest element");
+            do Output.println();
+        }
+
+        do numbers.dispose();
+        return;
+    }
+}
