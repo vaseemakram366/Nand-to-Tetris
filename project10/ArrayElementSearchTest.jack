@@ -1,0 +1,42 @@
+class ArrayElementSearchTest {
+    function void main() {
+        var Array numbers;
+        var int i;
+        var int target;
+        var int position;
+        var int n;
+
+        let n = 6;
+        let numbers = Array.new(n);
+
+        let numbers[0] = 14;
+        let numbers[1] = 27;
+        let numbers[2] = 39;
+        let numbers[3] = 42;
+        let numbers[4] = 56;
+        let numbers[5] = 68;
+
+        let target = 42;
+        let position = -1;
+        let i = 0;
+
+        while (i < n) {
+            if (numbers[i] = target) {
+                let position = i;
+            }
+            let i = i + 1;
+        }
+
+        if (position > -1) {
+            do Output.printString("Element found at index: ");
+            do Output.printInt(position);
+            do Output.println();
+        } else {
+            do Output.printString("Element not found");
+            do Output.println();
+        }
+
+        do numbers.dispose();
+        return;
+    }
+}
