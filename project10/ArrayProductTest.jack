@@ -1,0 +1,32 @@
+class ArrayProductTest {
+    function void main() {
+        var Array numbers;
+        var int i;
+        var int product;
+        var int n;
+
+        let n = 5;
+        let numbers = Array.new(n);
+
+        let numbers[0] = 2;
+        let numbers[1] = 3;
+        let numbers[2] = 4;
+        let numbers[3] = 5;
+        let numbers[4] = 2;
+
+        let product = 1;
+        let i = 0;
+
+        while (i < n) {
+            let product = product * numbers[i];
+            let i = i + 1;
+        }
+
+        do Output.printString("Array product: ");
+        do Output.printInt(product);
+        do Output.println();
+
+        do numbers.dispose();
+        return;
+    }
+}
