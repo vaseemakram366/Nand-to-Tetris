@@ -1,0 +1,35 @@
+class ArrayPrefixSumTest {
+    function void main() {
+        var Array numbers;
+        var int i;
+        var int sum;
+        var int n;
+
+        let n = 5;
+        let numbers = Array.new(n);
+
+        let numbers[0] = 2;
+        let numbers[1] = 4;
+        let numbers[2] = 6;
+        let numbers[3] = 8;
+        let numbers[4] = 10;
+
+        let sum = 0;
+        let i = 0;
+
+        do Output.printString("Prefix sums: ");
+
+        while (i < n) {
+            let sum = sum + numbers[i];
+            do Output.printInt(sum);
+            do Output.printString(" ");
+
+            let i = i + 1;
+        }
+
+        do Output.println();
+        do numbers.dispose();
+
+        return;
+    }
+}
