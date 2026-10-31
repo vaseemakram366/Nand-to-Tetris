@@ -1,0 +1,47 @@
+class ArrayPairSumTest {
+    function void main() {
+        var Array numbers;
+        var int i;
+        var int j;
+        var int target;
+        var int n;
+
+        let n = 6;
+        let numbers = Array.new(n);
+
+        let numbers[0] = 2;
+        let numbers[1] = 7;
+        let numbers[2] = 4;
+        let numbers[3] = 5;
+        let numbers[4] = 3;
+        let numbers[5] = 8;
+
+        let target = 10;
+        let i = 0;
+
+        do Output.printString("Pairs with sum 10:");
+        do Output.println();
+
+        while (i < n) {
+            let j = i + 1;
+
+            while (j < n) {
+                if ((numbers[i] + numbers[j]) = target) {
+                    do Output.printInt(numbers[i]);
+                    do Output.printString(" + ");
+                    do Output.printInt(numbers[j]);
+                    do Output.printString(" = ");
+                    do Output.printInt(target);
+                    do Output.println();
+                }
+
+                let j = j + 1;
+            }
+
+            let i = i + 1;
+        }
+
+        do numbers.dispose();
+        return;
+    }
+}
