@@ -1,0 +1,42 @@
+class ArrayElementFrequencyTest {
+    function void main() {
+        var Array numbers;
+        var int i;
+        var int target;
+        var int frequency;
+        var int n;
+
+        let n = 8;
+        let numbers = Array.new(n);
+
+        let numbers[0] = 4;
+        let numbers[1] = 7;
+        let numbers[2] = 4;
+        let numbers[3] = 2;
+        let numbers[4] = 4;
+        let numbers[5] = 9;
+        let numbers[6] = 7;
+        let numbers[7] = 4;
+
+        let target = 4;
+        let frequency = 0;
+        let i = 0;
+
+        while (i < n) {
+            if (numbers[i] = target) {
+                let frequency = frequency + 1;
+            }
+
+            let i = i + 1;
+        }
+
+        do Output.printString("Frequency of ");
+        do Output.printInt(target);
+        do Output.printString(": ");
+        do Output.printInt(frequency);
+        do Output.println();
+
+        do numbers.dispose();
+        return;
+    }
+}
