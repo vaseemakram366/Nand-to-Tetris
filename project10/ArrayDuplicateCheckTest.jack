@@ -1,0 +1,47 @@
+class ArrayDuplicateCheckTest {
+    function void main() {
+        var Array numbers;
+        var int i;
+        var int j;
+        var int n;
+        var int found;
+
+        let n = 6;
+        let numbers = Array.new(n);
+
+        let numbers[0] = 12;
+        let numbers[1] = 25;
+        let numbers[2] = 37;
+        let numbers[3] = 25;
+        let numbers[4] = 48;
+        let numbers[5] = 59;
+
+        let found = 0;
+        let i = 0;
+
+        while ((i < n) & (found = 0)) {
+            let j = i + 1;
+
+            while ((j < n) & (found = 0)) {
+                if (numbers[i] = numbers[j]) {
+                    let found = 1;
+                }
+
+                let j = j + 1;
+            }
+
+            let i = i + 1;
+        }
+
+        if (found = 1) {
+            do Output.printString("Duplicate elements found");
+        } else {
+            do Output.printString("No duplicate elements");
+        }
+
+        do Output.println();
+        do numbers.dispose();
+
+        return;
+    }
+}
