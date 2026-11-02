@@ -1,0 +1,57 @@
+class ArrayIntersectionTest {
+    function void main() {
+        var Array first;
+        var Array second;
+        var int i;
+        var int j;
+        var int found;
+        var int n;
+        var int m;
+
+        let n = 5;
+        let m = 4;
+
+        let first = Array.new(n);
+        let second = Array.new(m);
+
+        let first[0] = 10;
+        let first[1] = 20;
+        let first[2] = 30;
+        let first[3] = 40;
+        let first[4] = 50;
+
+        let second[0] = 30;
+        let second[1] = 50;
+        let second[2] = 60;
+        let second[3] = 20;
+
+        do Output.printString("Common elements: ");
+
+        let i = 0;
+        while (i < n) {
+            let found = 0;
+            let j = 0;
+
+            while ((j < m) & (found = 0)) {
+                if (first[i] = second[j]) {
+                    let found = 1;
+                }
+                let j = j + 1;
+            }
+
+            if (found = 1) {
+                do Output.printInt(first[i]);
+                do Output.printString(" ");
+            }
+
+            let i = i + 1;
+        }
+
+        do Output.println();
+
+        do first.dispose();
+        do second.dispose();
+
+        return;
+    }
+}
