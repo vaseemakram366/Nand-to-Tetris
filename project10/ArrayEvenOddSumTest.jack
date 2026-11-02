@@ -1,0 +1,47 @@
+class ArrayEvenOddSumTest {
+    function void main() {
+        var Array numbers;
+        var int i;
+        var int n;
+        var int evenSum;
+        var int oddSum;
+        var int quotient;
+
+        let n = 6;
+        let numbers = Array.new(n);
+
+        let numbers[0] = 2;
+        let numbers[1] = 5;
+        let numbers[2] = 8;
+        let numbers[3] = 3;
+        let numbers[4] = 10;
+        let numbers[5] = 7;
+
+        let evenSum = 0;
+        let oddSum = 0;
+        let i = 0;
+
+        while (i < n) {
+            let quotient = numbers[i] / 2;
+
+            if ((quotient * 2) = numbers[i]) {
+                let evenSum = evenSum + numbers[i];
+            } else {
+                let oddSum = oddSum + numbers[i];
+            }
+
+            let i = i + 1;
+        }
+
+        do Output.printString("Even sum: ");
+        do Output.printInt(evenSum);
+        do Output.println();
+
+        do Output.printString("Odd sum: ");
+        do Output.printInt(oddSum);
+        do Output.println();
+
+        do numbers.dispose();
+        return;
+    }
+}
