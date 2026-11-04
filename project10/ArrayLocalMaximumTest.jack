@@ -1,0 +1,44 @@
+class ArrayLocalMaximumTest {
+    function void main() {
+        var Array numbers;
+        var int i;
+        var int n;
+        var int found;
+
+        let n = 7;
+        let numbers = Array.new(n);
+
+        let numbers[0] = 10;
+        let numbers[1] = 25;
+        let numbers[2] = 15;
+        let numbers[3] = 40;
+        let numbers[4] = 20;
+        let numbers[5] = 35;
+        let numbers[6] = 12;
+
+        let i = 1;
+        let found = 0;
+
+        do Output.printString("Local maximum elements: ");
+
+        while (i < n - 1) {
+            if ((numbers[i] > numbers[i - 1]) & 
+                (numbers[i] > numbers[i + 1])) {
+                do Output.printInt(numbers[i]);
+                do Output.printString(" ");
+                let found = 1;
+            }
+
+            let i = i + 1;
+        }
+
+        if (found = 0) {
+            do Output.printString("None");
+        }
+
+        do Output.println();
+        do numbers.dispose();
+
+        return;
+    }
+}
