@@ -1,0 +1,40 @@
+class ArrayConsecutiveNumbersTest {
+    function void main() {
+        var Array numbers;
+        var int i;
+        var int n;
+        var int isConsecutive;
+
+        let n = 6;
+        let numbers = Array.new(n);
+
+        let numbers[0] = 11;
+        let numbers[1] = 12;
+        let numbers[2] = 13;
+        let numbers[3] = 14;
+        let numbers[4] = 15;
+        let numbers[5] = 16;
+
+        let isConsecutive = 1;
+        let i = 0;
+
+        while ((i < n - 1) & (isConsecutive = 1)) {
+            if (numbers[i + 1] = numbers[i] + 1) {
+                let i = i + 1;
+            } else {
+                let isConsecutive = 0;
+            }
+        }
+
+        if (isConsecutive = 1) {
+            do Output.printString("Array contains consecutive numbers");
+        } else {
+            do Output.printString("Array does not contain consecutive numbers");
+        }
+
+        do Output.println();
+        do numbers.dispose();
+
+        return;
+    }
+}
