@@ -1,0 +1,59 @@
+class ArrayIsSubsetTest {
+    function void main() {
+        var Array first;
+        var Array second;
+        var int i;
+        var int j;
+        var int found;
+        var int isSubset;
+
+        let first = Array.new(6);
+        let second = Array.new(3);
+
+        let first[0] = 10;
+        let first[1] = 20;
+        let first[2] = 30;
+        let first[3] = 40;
+        let first[4] = 50;
+        let first[5] = 60;
+
+        let second[0] = 20;
+        let second[1] = 40;
+        let second[2] = 60;
+
+        let isSubset = 1;
+        let i = 0;
+
+        while ((i < 3) & (isSubset = 1)) {
+            let found = 0;
+            let j = 0;
+
+            while ((j < 6) & (found = 0)) {
+                if (second[i] = first[j]) {
+                    let found = 1;
+                }
+
+                let j = j + 1;
+            }
+
+            if (found = 0) {
+                let isSubset = 0;
+            }
+
+            let i = i + 1;
+        }
+
+        if (isSubset = 1) {
+            do Output.printString("Second array is a subset");
+        } else {
+            do Output.printString("Second array is not a subset");
+        }
+
+        do Output.println();
+
+        do first.dispose();
+        do second.dispose();
+
+        return;
+    }
+}
