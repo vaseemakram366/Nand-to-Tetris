@@ -1,0 +1,42 @@
+class ArrayIsPalindromeTest {
+    function void main() {
+        var Array numbers;
+        var int left;
+        var int right;
+        var int n;
+        var int isPalindrome;
+
+        let n = 5;
+        let numbers = Array.new(n);
+
+        let numbers[0] = 1;
+        let numbers[1] = 2;
+        let numbers[2] = 3;
+        let numbers[3] = 2;
+        let numbers[4] = 1;
+
+        let left = 0;
+        let right = n - 1;
+        let isPalindrome = 1;
+
+        while ((left < right) & (isPalindrome = 1)) {
+            if (numbers[left] = numbers[right]) {
+                let left = left + 1;
+                let right = right - 1;
+            } else {
+                let isPalindrome = 0;
+            }
+        }
+
+        if (isPalindrome = 1) {
+            do Output.printString("Array is a palindrome");
+        } else {
+            do Output.printString("Array is not a palindrome");
+        }
+
+        do Output.println();
+        do numbers.dispose();
+
+        return;
+    }
+}
