@@ -1,0 +1,53 @@
+class ArrayDifferenceBetweenMaxMinTest {
+    function void main() {
+        var Array numbers;
+        var int i;
+        var int n;
+        var int maximum;
+        var int minimum;
+        var int difference;
+
+        let n = 6;
+        let numbers = Array.new(n);
+
+        let numbers[0] = 45;
+        let numbers[1] = 12;
+        let numbers[2] = 78;
+        let numbers[3] = 23;
+        let numbers[4] = 9;
+        let numbers[5] = 56;
+
+        let maximum = numbers[0];
+        let minimum = numbers[0];
+        let i = 1;
+
+        while (i < n) {
+            if (numbers[i] > maximum) {
+                let maximum = numbers[i];
+            }
+
+            if (numbers[i] < minimum) {
+                let minimum = numbers[i];
+            }
+
+            let i = i + 1;
+        }
+
+        let difference = maximum - minimum;
+
+        do Output.printString("Maximum: ");
+        do Output.printInt(maximum);
+        do Output.println();
+
+        do Output.printString("Minimum: ");
+        do Output.printInt(minimum);
+        do Output.println();
+
+        do Output.printString("Difference: ");
+        do Output.printInt(difference);
+        do Output.println();
+
+        do numbers.dispose();
+        return;
+    }
+}
