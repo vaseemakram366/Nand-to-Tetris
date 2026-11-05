@@ -1,0 +1,48 @@
+class ArrayLeadersTest {
+    function void main() {
+        var Array numbers;
+        var int i;
+        var int j;
+        var int isLeader;
+        var int n;
+
+        let n = 6;
+        let numbers = Array.new(n);
+
+        let numbers[0] = 16;
+        let numbers[1] = 17;
+        let numbers[2] = 4;
+        let numbers[3] = 3;
+        let numbers[4] = 5;
+        let numbers[5] = 2;
+
+        do Output.printString("Leader elements: ");
+
+        let i = 0;
+
+        while (i < n) {
+            let isLeader = 1;
+            let j = i + 1;
+
+            while ((j < n) & (isLeader = 1)) {
+                if (numbers[j] > numbers[i]) {
+                    let isLeader = 0;
+                }
+
+                let j = j + 1;
+            }
+
+            if (isLeader = 1) {
+                do Output.printInt(numbers[i]);
+                do Output.printString(" ");
+            }
+
+            let i = i + 1;
+        }
+
+        do Output.println();
+        do numbers.dispose();
+
+        return;
+    }
+}
