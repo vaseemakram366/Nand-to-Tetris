@@ -1,0 +1,51 @@
+class ArrayBinarySearchTest {
+    function void main() {
+        var Array numbers;
+        var int low;
+        var int high;
+        var int mid;
+        var int target;
+        var int position;
+
+        let numbers = Array.new(7);
+
+        let numbers[0] = 5;
+        let numbers[1] = 12;
+        let numbers[2] = 18;
+        let numbers[3] = 25;
+        let numbers[4] = 31;
+        let numbers[5] = 42;
+        let numbers[6] = 56;
+
+        let target = 31;
+        let low = 0;
+        let high = 6;
+        let position = -1;
+
+        while ((low < high + 1) & (position = -1)) {
+            let mid = (low + high) / 2;
+
+            if (numbers[mid] = target) {
+                let position = mid;
+            } else {
+                if (numbers[mid] < target) {
+                    let low = mid + 1;
+                } else {
+                    let high = mid - 1;
+                }
+            }
+        }
+
+        if (position > -1) {
+            do Output.printString("Element found at index: ");
+            do Output.printInt(position);
+        } else {
+            do Output.printString("Element not found");
+        }
+
+        do Output.println();
+        do numbers.dispose();
+
+        return;
+    }
+}
