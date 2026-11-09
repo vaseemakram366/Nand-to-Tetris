@@ -1,0 +1,46 @@
+class ArrayLongestIncreasingRunTest {
+    function void main() {
+        var Array numbers;
+        var int i;
+        var int currentLength;
+        var int maxLength;
+        var int n;
+
+        let n = 8;
+        let numbers = Array.new(n);
+
+        let numbers[0] = 1;
+        let numbers[1] = 2;
+        let numbers[2] = 3;
+        let numbers[3] = 1;
+        let numbers[4] = 2;
+        let numbers[5] = 3;
+        let numbers[6] = 4;
+        let numbers[7] = 0;
+
+        let currentLength = 1;
+        let maxLength = 1;
+        let i = 1;
+
+        while (i < n) {
+            if (numbers[i] > numbers[i - 1]) {
+                let currentLength = currentLength + 1;
+            } else {
+                let currentLength = 1;
+            }
+
+            if (currentLength > maxLength) {
+                let maxLength = currentLength;
+            }
+
+            let i = i + 1;
+        }
+
+        do Output.printString("Longest increasing run length: ");
+        do Output.printInt(maxLength);
+        do Output.println();
+
+        do numbers.dispose();
+        return;
+    }
+}
