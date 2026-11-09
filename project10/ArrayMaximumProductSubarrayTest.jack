@@ -1,0 +1,57 @@
+class ArrayMaximumProductSubarrayTest {
+    function void main() {
+        var Array nums;
+        var int n, i, temp;
+        var int maxEnding, minEnding, maxProduct;
+
+        let n = 5;
+        let nums = Array.new(n);
+
+        let nums[0] = 2;
+        let nums[1] = 3;
+        let nums[2] = -2;
+        let nums[3] = 4;
+        let nums[4] = -1;
+
+        let maxEnding = nums[0];
+        let minEnding = nums[0];
+        let maxProduct = nums[0];
+
+        let i = 1;
+
+        while (i < n) {
+            let temp = maxEnding;
+
+            if (nums[i] < 0) {
+                let maxEnding = minEnding;
+                let minEnding = temp;
+            }
+
+            if (nums[i] > maxEnding * nums[i]) {
+                let maxEnding = nums[i];
+            } else {
+                let maxEnding = maxEnding * nums[i];
+            }
+
+            if (nums[i] < minEnding * nums[i]) {
+                let minEnding = nums[i];
+            } else {
+                let minEnding = minEnding * nums[i];
+            }
+
+            if (maxEnding > maxProduct) {
+                let maxProduct = maxEnding;
+            }
+
+            let i = i + 1;
+        }
+
+        do Output.printString("Maximum Product: ");
+        do Output.printInt(maxProduct);
+        do Output.println();
+
+        do nums.dispose();
+
+        return;
+    }
+}
