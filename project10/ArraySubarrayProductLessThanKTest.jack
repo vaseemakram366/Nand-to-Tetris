@@ -1,0 +1,42 @@
+class ArraySubarrayProductLessThanKTest {
+    function void main() {
+        var Array nums;
+        var int n, k, left, right;
+        var int product, count;
+
+        let n = 5;
+        let k = 100;
+        let nums = Array.new(n);
+
+        let nums[0] = 10;
+        let nums[1] = 5;
+        let nums[2] = 2;
+        let nums[3] = 6;
+        let nums[4] = 3;
+
+        let left = 0;
+        let right = 0;
+        let product = 1;
+        let count = 0;
+
+        while (right < n) {
+            let product = product * nums[right];
+
+            while ((product > k - 1) & (left < right + 1)) {
+                let product = product / nums[left];
+                let left = left + 1;
+            }
+
+            let count = count + (right - left + 1);
+            let right = right + 1;
+        }
+
+        do Output.printString("Subarrays with Product Less Than K: ");
+        do Output.printInt(count);
+        do Output.println();
+
+        do nums.dispose();
+
+        return;
+    }
+}
