@@ -1,0 +1,53 @@
+class ArrayLongestCommonPrefixTest {
+    function void main() {
+        var Array words;
+        var int n, i, j, minLength;
+        var int match, prefixLength;
+
+        let n = 3;
+        let words = Array.new(n);
+
+        let words[0] = "flower";
+        let words[1] = "flow";
+        let words[2] = "flight";
+
+        let minLength = 100;
+        let i = 0;
+
+        while (i < n) {
+            if (words[i].length() < minLength) {
+                let minLength = words[i].length();
+            }
+            let i = i + 1;
+        }
+
+        let prefixLength = 0;
+        let match = 1;
+        let j = 0;
+
+        while ((j < minLength) & (match = 1)) {
+            let i = 1;
+
+            while ((i < n) & (match = 1)) {
+                if (~(words[i].charAt(j) = words[0].charAt(j))) {
+                    let match = 0;
+                }
+                let i = i + 1;
+            }
+
+            if (match = 1) {
+                let prefixLength = prefixLength + 1;
+            }
+
+            let j = j + 1;
+        }
+
+        do Output.printString("Longest Common Prefix: ");
+        do Output.printString(words[0].substring(0, prefixLength));
+        do Output.println();
+
+        do words.dispose();
+
+        return;
+    }
+}
