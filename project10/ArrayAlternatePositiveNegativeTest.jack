@@ -1,0 +1,75 @@
+class ArrayAlternatePositiveNegativeTest {
+    function void main() {
+        var Array numbers;
+        var Array result;
+        var int i;
+        var int j;
+        var int k;
+        var int positiveCount;
+        var int negativeCount;
+        var int positiveIndex;
+        var int negativeIndex;
+        var int n;
+
+        let n = 6;
+        let numbers = Array.new(n);
+        let result = Array.new(n);
+
+        let numbers[0] = 1;
+        let numbers[1] = -2;
+        let numbers[2] = 3;
+        let numbers[3] = -4;
+        let numbers[4] = 5;
+        let numbers[5] = -6;
+
+        let positiveCount = 0;
+        let negativeCount = 0;
+        let i = 0;
+
+        while (i < n) {
+            if (numbers[i] > 0) {
+                let positiveCount = positiveCount + 1;
+            } else {
+                let negativeCount = negativeCount + 1;
+            }
+            let i = i + 1;
+        }
+
+        let positiveIndex = 0;
+        let negativeIndex = 0;
+        let i = 0;
+
+        while (i < n) {
+            if ((i < positiveCount * 2) & (i / 2 * 2 = i)) {
+                while (numbers[positiveIndex] < 0) {
+                    let positiveIndex = positiveIndex + 1;
+                }
+                let result[i] = numbers[positiveIndex];
+                let positiveIndex = positiveIndex + 1;
+            } else {
+                while (numbers[negativeIndex] > 0) {
+                    let negativeIndex = negativeIndex + 1;
+                }
+                let result[i] = numbers[negativeIndex];
+                let negativeIndex = negativeIndex + 1;
+            }
+            let i = i + 1;
+        }
+
+        do Output.printString("Alternating array: ");
+
+        let i = 0;
+        while (i < n) {
+            do Output.printInt(result[i]);
+            do Output.printString(" ");
+            let i = i + 1;
+        }
+
+        do Output.println();
+
+        do numbers.dispose();
+        do result.dispose();
+
+        return;
+    }
+}
