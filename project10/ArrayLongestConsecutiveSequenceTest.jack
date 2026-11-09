@@ -1,0 +1,57 @@
+class ArrayLongestConsecutiveSequenceTest {
+    function void main() {
+        var Array nums;
+        var int n, i, j;
+        var int current, count, maxCount, found;
+
+        let n = 7;
+        let nums = Array.new(n);
+
+        let nums[0] = 100;
+        let nums[1] = 4;
+        let nums[2] = 200;
+        let nums[3] = 1;
+        let nums[4] = 3;
+        let nums[5] = 2;
+        let nums[6] = 5;
+
+        let maxCount = 0;
+        let i = 0;
+
+        while (i < n) {
+            let current = nums[i];
+            let count = 1;
+
+            let found = 1;
+
+            while (found = 1) {
+                let found = 0;
+                let j = 0;
+
+                while (j < n) {
+                    if (nums[j] = current + 1) {
+                        let current = current + 1;
+                        let count = count + 1;
+                        let found = 1;
+                    }
+
+                    let j = j + 1;
+                }
+            }
+
+            if (count > maxCount) {
+                let maxCount = count;
+            }
+
+            let i = i + 1;
+        }
+
+        do Output.printString("Longest Consecutive Sequence: ");
+        do Output.printInt(maxCount);
+        do Output.println();
+
+        do nums.dispose();
+
+        return;
+    }
+}
