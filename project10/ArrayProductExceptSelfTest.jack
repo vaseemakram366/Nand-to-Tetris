@@ -1,0 +1,50 @@
+class ArrayProductExceptSelfTest {
+    function void main() {
+        var Array nums, result;
+        var int n, i, j, product;
+
+        let n = 5;
+        let nums = Array.new(n);
+        let result = Array.new(n);
+
+        let nums[0] = 1;
+        let nums[1] = 2;
+        let nums[2] = 3;
+        let nums[3] = 4;
+        let nums[4] = 5;
+
+        let i = 0;
+
+        while (i < n) {
+            let product = 1;
+            let j = 0;
+
+            while (j < n) {
+                if (~(i = j)) {
+                    let product = product * nums[j];
+                }
+
+                let j = j + 1;
+            }
+
+            let result[i] = product;
+            let i = i + 1;
+        }
+
+        do Output.printString("Product Except Self: ");
+
+        let i = 0;
+        while (i < n) {
+            do Output.printInt(result[i]);
+            do Output.printString(" ");
+            let i = i + 1;
+        }
+
+        do Output.println();
+
+        do nums.dispose();
+        do result.dispose();
+
+        return;
+    }
+}
