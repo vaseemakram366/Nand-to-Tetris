@@ -1,0 +1,60 @@
+class ArrayTrappingRainWaterTest {
+    function void main() {
+        var Array height;
+        var int n, i, j;
+        var int leftMax, rightMax, water, total;
+
+        let n = 6;
+        let height = Array.new(n);
+
+        let height[0] = 4;
+        let height[1] = 2;
+        let height[2] = 0;
+        let height[3] = 3;
+        let height[4] = 2;
+        let height[5] = 5;
+
+        let total = 0;
+        let i = 0;
+
+        while (i < n) {
+            let leftMax = 0;
+            let rightMax = 0;
+
+            let j = 0;
+            while (j < i + 1) {
+                if (height[j] > leftMax) {
+                    let leftMax = height[j];
+                }
+                let j = j + 1;
+            }
+
+            let j = i;
+            while (j < n) {
+                if (height[j] > rightMax) {
+                    let rightMax = height[j];
+                }
+                let j = j + 1;
+            }
+
+            if (leftMax < rightMax) {
+                let water = leftMax;
+            } else {
+                let water = rightMax;
+            }
+
+            let water = water - height[i];
+            let total = total + water;
+
+            let i = i + 1;
+        }
+
+        do Output.printString("Trapped Rainwater: ");
+        do Output.printInt(total);
+        do Output.println();
+
+        do height.dispose();
+
+        return;
+    }
+}
