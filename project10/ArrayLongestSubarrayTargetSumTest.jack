@@ -1,0 +1,56 @@
+class ArrayLongestSubarrayTargetSumTest {
+    function void main() {
+        var Array numbers;
+        var int i;
+        var int j;
+        var int sum;
+        var int maxLength;
+        var int target;
+        var int length;
+        var int n;
+
+        let n = 8;
+        let numbers = Array.new(n);
+
+        let numbers[0] = 10;
+        let numbers[1] = 5;
+        let numbers[2] = 2;
+        let numbers[3] = 7;
+        let numbers[4] = 1;
+        let numbers[5] = 9;
+        let numbers[6] = 3;
+        let numbers[7] = 4;
+
+        let target = 15;
+        let maxLength = 0;
+        let i = 0;
+
+        while (i < n) {
+            let sum = 0;
+            let j = i;
+
+            while (j < n) {
+                let sum = sum + numbers[j];
+
+                if (sum = target) {
+                    let length = j - i + 1;
+
+                    if (length > maxLength) {
+                        let maxLength = length;
+                    }
+                }
+
+                let j = j + 1;
+            }
+
+            let i = i + 1;
+        }
+
+        do Output.printString("Longest subarray length: ");
+        do Output.printInt(maxLength);
+        do Output.println();
+
+        do numbers.dispose();
+        return;
+    }
+}
