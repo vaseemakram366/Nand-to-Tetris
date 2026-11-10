@@ -1,0 +1,43 @@
+class ArrayStockProfitTest {
+    function void main() {
+        var Array prices;
+        var int n, i;
+        var int minPrice, profit, maxProfit;
+
+        let n = 6;
+        let prices = Array.new(n);
+
+        let prices[0] = 7;
+        let prices[1] = 1;
+        let prices[2] = 5;
+        let prices[3] = 3;
+        let prices[4] = 6;
+        let prices[5] = 4;
+
+        let minPrice = prices[0];
+        let maxProfit = 0;
+        let i = 1;
+
+        while (i < n) {
+            let profit = prices[i] - minPrice;
+
+            if (profit > maxProfit) {
+                let maxProfit = profit;
+            }
+
+            if (prices[i] < minPrice) {
+                let minPrice = prices[i];
+            }
+
+            let i = i + 1;
+        }
+
+        do Output.printString("Maximum Profit: ");
+        do Output.printInt(maxProfit);
+        do Output.println();
+
+        do prices.dispose();
+
+        return;
+    }
+}
