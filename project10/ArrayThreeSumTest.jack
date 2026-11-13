@@ -1,0 +1,59 @@
+class ArrayThreeSumTest {
+    function void main() {
+        var Array nums;
+        var int n, i, j, k;
+        var int sum, count;
+
+        let n = 6;
+        let nums = Array.new(n);
+
+        let nums[0] = -1;
+        let nums[1] = 0;
+        let nums[2] = 1;
+        let nums[3] = 2;
+        let nums[4] = -1;
+        let nums[5] = -4;
+
+        let count = 0;
+        let i = 0;
+
+        while (i < n - 2) {
+            let j = i + 1;
+
+            while (j < n - 1) {
+                let k = j + 1;
+
+                while (k < n) {
+                    let sum = nums[i] + nums[j] + nums[k];
+
+                    if (sum = 0) {
+                        do Output.printString("[");
+                        do Output.printInt(nums[i]);
+                        do Output.printString(", ");
+                        do Output.printInt(nums[j]);
+                        do Output.printString(", ");
+                        do Output.printInt(nums[k]);
+                        do Output.printString("]");
+                        do Output.println();
+
+                        let count = count + 1;
+                    }
+
+                    let k = k + 1;
+                }
+
+                let j = j + 1;
+            }
+
+            let i = i + 1;
+        }
+
+        do Output.printString("Total Triplets: ");
+        do Output.printInt(count);
+        do Output.println();
+
+        do nums.dispose();
+
+        return;
+    }
+}
