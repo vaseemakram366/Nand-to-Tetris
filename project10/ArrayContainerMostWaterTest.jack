@@ -1,0 +1,56 @@
+class ArrayContainerMostWaterTest {
+    function void main() {
+        var Array height;
+        var int n, i, j;
+        var int minHeight, width;
+        var int area, maxArea;
+
+        let n = 9;
+        let height = Array.new(n);
+
+        let height[0] = 1;
+        let height[1] = 8;
+        let height[2] = 6;
+        let height[3] = 2;
+        let height[4] = 5;
+        let height[5] = 4;
+        let height[6] = 8;
+        let height[7] = 3;
+        let height[8] = 7;
+
+        let maxArea = 0;
+        let i = 0;
+
+        while (i < n - 1) {
+            let j = i + 1;
+
+            while (j < n) {
+                if (height[i] < height[j]) {
+                    let minHeight = height[i];
+                }
+                else {
+                    let minHeight = height[j];
+                }
+
+                let width = j - i;
+                let area = minHeight * width;
+
+                if (area > maxArea) {
+                    let maxArea = area;
+                }
+
+                let j = j + 1;
+            }
+
+            let i = i + 1;
+        }
+
+        do Output.printString("Maximum Water Area: ");
+        do Output.printInt(maxArea);
+        do Output.println();
+
+        do height.dispose();
+
+        return;
+    }
+}
