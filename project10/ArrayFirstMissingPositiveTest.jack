@@ -1,0 +1,56 @@
+class ArrayFirstMissingPositiveTest {
+    function void main() {
+        var Array nums;
+        var int n, i, j, temp, found, answer;
+
+        let n = 5;
+        let nums = Array.new(n);
+
+        let nums[0] = 3;
+        let nums[1] = 4;
+        let nums[2] = -1;
+        let nums[3] = 1;
+        let nums[4] = 2;
+
+        let i = 0;
+
+        while (i < n) {
+            if ((nums[i] > 0) & (nums[i] < n + 1)) {
+                let j = nums[i] - 1;
+
+                if (~(nums[i] = nums[j])) {
+                    let temp = nums[i];
+                    let nums[i] = nums[j];
+                    let nums[j] = temp;
+                }
+                else {
+                    let i = i + 1;
+                }
+            }
+            else {
+                let i = i + 1;
+            }
+        }
+
+        let answer = n + 1;
+        let found = 0;
+        let i = 0;
+
+        while ((i < n) & (found = 0)) {
+            if (~(nums[i] = i + 1)) {
+                let answer = i + 1;
+                let found = 1;
+            }
+
+            let i = i + 1;
+        }
+
+        do Output.printString("First Missing Positive: ");
+        do Output.printInt(answer);
+        do Output.println();
+
+        do nums.dispose();
+
+        return;
+    }
+}
