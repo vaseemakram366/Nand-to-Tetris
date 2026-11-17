@@ -1,0 +1,59 @@
+class ArraySort012Test {
+    function void main() {
+        var Array nums;
+        var int n, low, mid, high, temp, i;
+
+        let n = 8;
+        let nums = Array.new(n);
+
+        let nums[0] = 2;
+        let nums[1] = 0;
+        let nums[2] = 2;
+        let nums[3] = 1;
+        let nums[4] = 1;
+        let nums[5] = 0;
+        let nums[6] = 2;
+        let nums[7] = 1;
+
+        let low = 0;
+        let mid = 0;
+        let high = n - 1;
+
+        while (mid < high + 1) {
+            if (nums[mid] = 0) {
+                let temp = nums[low];
+                let nums[low] = nums[mid];
+                let nums[mid] = temp;
+
+                let low = low + 1;
+                let mid = mid + 1;
+            }
+            else {
+                if (nums[mid] = 1) {
+                    let mid = mid + 1;
+                }
+                else {
+                    let temp = nums[mid];
+                    let nums[mid] = nums[high];
+                    let nums[high] = temp;
+
+                    let high = high - 1;
+                }
+            }
+        }
+
+        do Output.printString("Sorted Array: ");
+
+        let i = 0;
+        while (i < n) {
+            do Output.printInt(nums[i]);
+            do Output.printString(" ");
+            let i = i + 1;
+        }
+
+        do Output.println();
+        do nums.dispose();
+
+        return;
+    }
+}
