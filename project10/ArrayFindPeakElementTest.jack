@@ -1,0 +1,56 @@
+class ArrayFindPeakElementTest {
+    function void main() {
+        var Array nums;
+        var int n, i, peak;
+
+        let n = 7;
+        let nums = Array.new(n);
+
+        let nums[0] = 1;
+        let nums[1] = 3;
+        let nums[2] = 5;
+        let nums[3] = 4;
+        let nums[4] = 6;
+        let nums[5] = 8;
+        let nums[6] = 7;
+
+        let peak = -1;
+        let i = 1;
+
+        while (i < n - 1) {
+            if ((nums[i] > nums[i - 1]) & (nums[i] > nums[i + 1])) {
+                if (peak = -1) {
+                    let peak = i;
+                }
+            }
+
+            let i = i + 1;
+        }
+
+        if (nums[0] > nums[1]) {
+            let peak = 0;
+        }
+
+        if (nums[n - 1] > nums[n - 2]) {
+            let peak = n - 1;
+        }
+
+        if (peak > -1) {
+            do Output.printString("Peak Element: ");
+            do Output.printInt(nums[peak]);
+            do Output.println();
+
+            do Output.printString("Peak Index: ");
+            do Output.printInt(peak);
+            do Output.println();
+        }
+        else {
+            do Output.printString("No Peak Found");
+            do Output.println();
+        }
+
+        do nums.dispose();
+
+        return;
+    }
+}
