@@ -1,0 +1,40 @@
+class ArrayCountInversionsTest {
+    function void main() {
+        var Array nums;
+        var int n, i, j, count;
+
+        let n = 5;
+        let nums = Array.new(n);
+
+        let nums[0] = 2;
+        let nums[1] = 4;
+        let nums[2] = 1;
+        let nums[3] = 3;
+        let nums[4] = 5;
+
+        let count = 0;
+        let i = 0;
+
+        while (i < n - 1) {
+            let j = i + 1;
+
+            while (j < n) {
+                if (nums[i] > nums[j]) {
+                    let count = count + 1;
+                }
+
+                let j = j + 1;
+            }
+
+            let i = i + 1;
+        }
+
+        do Output.printString("Total Inversions: ");
+        do Output.printInt(count);
+        do Output.println();
+
+        do nums.dispose();
+
+        return;
+    }
+}
