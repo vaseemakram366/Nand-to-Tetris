@@ -1,0 +1,46 @@
+class ArrayKthLargestElementTest {
+    function void main() {
+        var Array nums;
+        var int n, k, i, j, temp, answer;
+
+        let n = 7;
+        let k = 3;
+        let nums = Array.new(n);
+
+        let nums[0] = 3;
+        let nums[1] = 2;
+        let nums[2] = 1;
+        let nums[3] = 5;
+        let nums[4] = 6;
+        let nums[5] = 4;
+        let nums[6] = 8;
+
+        let i = 0;
+
+        while (i < n - 1) {
+            let j = 0;
+
+            while (j < n - i - 1) {
+                if (nums[j] < nums[j + 1]) {
+                    let temp = nums[j];
+                    let nums[j] = nums[j + 1];
+                    let nums[j + 1] = temp;
+                }
+
+                let j = j + 1;
+            }
+
+            let i = i + 1;
+        }
+
+        let answer = nums[k - 1];
+
+        do Output.printString("Kth Largest Element: ");
+        do Output.printInt(answer);
+        do Output.println();
+
+        do nums.dispose();
+
+        return;
+    }
+}
