@@ -1,0 +1,77 @@
+class ArrayProductOfThreeLargestTest {
+    function void main() {
+        var Array nums;
+        var int n, i, j, temp;
+        var int first, second, third;
+        var int smallest, secondSmallest;
+        var int product1, product2, answer;
+
+        let n = 6;
+        let nums = Array.new(n);
+
+        let nums[0] = -10;
+        let nums[1] = -10;
+        let nums[2] = 1;
+        let nums[3] = 3;
+        let nums[4] = 2;
+        let nums[5] = 5;
+
+        let first = nums[0];
+        let second = nums[0];
+        let third = nums[0];
+
+        let smallest = nums[0];
+        let secondSmallest = nums[0];
+
+        let i = 1;
+
+        while (i < n) {
+            if (nums[i] > first) {
+                let third = second;
+                let second = first;
+                let first = nums[i];
+            }
+            else {
+                if (nums[i] > second) {
+                    let third = second;
+                    let second = nums[i];
+                }
+                else {
+                    if (nums[i] > third) {
+                        let third = nums[i];
+                    }
+                }
+            }
+
+            if (nums[i] < smallest) {
+                let secondSmallest = smallest;
+                let smallest = nums[i];
+            }
+            else {
+                if (nums[i] < secondSmallest) {
+                    let secondSmallest = nums[i];
+                }
+            }
+
+            let i = i + 1;
+        }
+
+        let product1 = first * second * third;
+        let product2 = first * smallest * secondSmallest;
+
+        if (product1 > product2) {
+            let answer = product1;
+        }
+        else {
+            let answer = product2;
+        }
+
+        do Output.printString("Maximum Product of Three: ");
+        do Output.printInt(answer);
+        do Output.println();
+
+        do nums.dispose();
+
+        return;
+    }
+}
