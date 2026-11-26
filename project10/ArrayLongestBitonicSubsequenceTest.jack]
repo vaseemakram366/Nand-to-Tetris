@@ -1,0 +1,88 @@
+class ArrayLongestBitonicSubsequenceTest {
+    function void main() {
+        var Array nums, inc, dec;
+        var int n, i, j, answer, length;
+
+        let n = 8;
+
+        let nums = Array.new(n);
+        let inc = Array.new(n);
+        let dec = Array.new(n);
+
+        let nums[0] = 1;
+        let nums[1] = 11;
+        let nums[2] = 2;
+        let nums[3] = 10;
+        let nums[4] = 4;
+        let nums[5] = 5;
+        let nums[6] = 2;
+        let nums[7] = 1;
+
+        let i = 0;
+        while (i < n) {
+            let inc[i] = 1;
+            let dec[i] = 1;
+            let i = i + 1;
+        }
+
+        // Calculate increasing subsequence lengths.
+        let i = 0;
+        while (i < n) {
+            let j = 0;
+
+            while (j < i) {
+                if (nums[j] < nums[i]) {
+                    if (inc[j] + 1 > inc[i]) {
+                        let inc[i] = inc[j] + 1;
+                    }
+                }
+
+                let j = j + 1;
+            }
+
+            let i = i + 1;
+        }
+
+        // Calculate decreasing subsequence lengths.
+        let i = n - 1;
+        while (i > -1) {
+            let j = i + 1;
+
+            while (j < n) {
+                if (nums[j] < nums[i]) {
+                    if (dec[j] + 1 > dec[i]) {
+                        let dec[i] = dec[j] + 1;
+                    }
+                }
+
+                let j = j + 1;
+            }
+
+            let i = i - 1;
+        }
+
+        // Combine both lengths at every peak.
+        let answer = 0;
+        let i = 0;
+
+        while (i < n) {
+            let length = inc[i] + dec[i] - 1;
+
+            if (length > answer) {
+                let answer = length;
+            }
+
+            let i = i + 1;
+        }
+
+        do Output.printString("Longest Bitonic Subsequence: ");
+        do Output.printInt(answer);
+        do Output.println();
+
+        do nums.dispose();
+        do inc.dispose();
+        do dec.dispose();
+
+        return;
+    }
+}
