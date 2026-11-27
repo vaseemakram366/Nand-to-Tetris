@@ -1,0 +1,60 @@
+class ArrayCoinChangeTest {
+    function void main() {
+        var Array coins, dp;
+        var int n, amount, i, j;
+        var int newCount, answer;
+
+        let n = 3;
+        let amount = 11;
+
+        let coins = Array.new(n);
+        let dp = Array.new(amount + 1);
+
+        let coins[0] = 1;
+        let coins[1] = 2;
+        let coins[2] = 5;
+
+        let i = 0;
+        while (i < amount + 1) {
+            let dp[i] = 10000;
+            let i = i + 1;
+        }
+
+        let dp[0] = 0;
+
+        let i = 1;
+        while (i < amount + 1) {
+            let j = 0;
+
+            while (j < n) {
+                if (coins[j] < i + 1) {
+                    let newCount = dp[i - coins[j]] + 1;
+
+                    if (newCount < dp[i]) {
+                        let dp[i] = newCount;
+                    }
+                }
+                else {
+                    if (coins[j] = i) {
+                        let dp[i] = 1;
+                    }
+                }
+
+                let j = j + 1;
+            }
+
+            let i = i + 1;
+        }
+
+        let answer = dp[amount];
+
+        do Output.printString("Minimum Coins Required: ");
+        do Output.printInt(answer);
+        do Output.println();
+
+        do coins.dispose();
+        do dp.dispose();
+
+        return;
+    }
+}
